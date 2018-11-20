@@ -16,13 +16,6 @@ html {
 
 }
 
-.bottomwrapper {
-  position: fixed;
-  bottom: 0;
-  width: 90%;
-  left: 50%;
-  margin-left: -45%;
-}
 
 body {
   background: #67B246;
@@ -595,6 +588,12 @@ i.fa-angellist:hover {
 
 .footer {
   display: inline-block;
+
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  left: 50%;
+  margin-left: -45%;
 
 }
 .footer nav {

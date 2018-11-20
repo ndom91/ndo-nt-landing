@@ -14,8 +14,8 @@ echo $label;
 echo $url;*/
 $inputstring=$_POST['value'];
 $str_explode=explode(",",$inputstring);
-$label = $str_explode[0]; 
-$url = $str_explode[1]; 
+$label = $str_explode[0];
+$url = $str_explode[1];
 
 setcookie($_POST['id'], json_encode($str_explode), time()+36000);
 
