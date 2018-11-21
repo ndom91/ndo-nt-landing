@@ -23,7 +23,7 @@ body {
   line-height:1;
   margin: 0;
   padding: 0;
-  opacity: 0.9; 
+  opacity: 0.9;
 }
 
 body:before {
@@ -42,9 +42,9 @@ body:after {
 	position: fixed;
 	z-index: -1;
   width: 100%;
-  box-shadow: 
+  box-shadow:
       inset 0px 121px 110px -100px #000,
-      inset 0px -121px 110px -100px #000; 
+      inset 0px -121px 110px -100px #000;
   background: url('assets/newtelcowallpaper.jpg') no-repeat center center fixed;
   /* background: url('../newtelcowallpaper.jpg') no-repeat center center / cover fixed; */
 }
@@ -129,7 +129,14 @@ img {
 .ynh-panel-active .logo {
     display: none;
 }
-
+.fnameWelcome {
+  font-family: 'Rajdhani';
+  color: #cccccc;
+  font-style: normal;
+}
+.fnameWelcome:hover {
+  text-shadow: 0 0 10px #67B246;
+}
 /* ==========================================================================
    2 = Apps
    ========================================================================== */
@@ -383,7 +390,7 @@ img {
 
 @media all and (max-width:30em){
  #t4{
-  
+
  }
 }
 
@@ -444,7 +451,7 @@ button {
 .ui-dialog-buttonset {
   background: #67B246;
   border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;  
+  border-bottom-left-radius: 10px;
 }
 .addLabel {
   text-align: left;

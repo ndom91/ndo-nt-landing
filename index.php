@@ -118,6 +118,51 @@
 
    $(document).ready(function() {
 
+    var ipnames = [
+      ["192.168.11.139","Nico"],
+      ["192.168.11.80","Jens"],
+      ["192.168.11.76","Nataliya"],
+      ["192.168.11.99","Mario"],
+      ["192.168.11.118","Kay"],
+      ["192.168.11.87","Stelios"],
+      ["192.168.11.71","Nik"],
+      ["192.168.11.98","Felix"],
+      ["192.168.11.133","Andreas"],
+      ["192.168.11.69","Georg"],
+      ["192.168.11.79","Irina"],
+      ["192.168.11.78","Alina"],
+      ["192.168.11.92","Tatjana"],
+      ["192.168.11.83","Dmitri"],
+      ["192.168.11.86","German"],
+      ["192.168.11.84","Nadezda"],
+      ["192.168.11.82","Svetlana"],
+      ["192.168.11.61","Svetlana"],
+      ["192.168.11.74","Elena"],
+      ["192.168.11.72","Sascha"],
+      ["192.168.11.14","Olga"],
+      ["192.168.11.73","Tamila"],
+      ["192.168.11.42","Jurij"],
+      ["192.168.11.85","Dmitry"],
+      ["192.168.11.107","Nodar"],
+      ["192.168.11.145","Paul"],
+      ["192.168.1.26","Maria"],
+      ["192.168.11.39","Natascha"],
+      ["192.168.11.111","Kai"],
+      ["192.168.11.144","Nik"],
+      ["192.168.11.71","Nik"],
+      ["192.168.11.10","Nodo"],
+    ];
+
+    var userIP = getCookie("IP");
+
+    var arr = ipnames.filter( function( el ) {
+        return !!~el.indexOf( userIP );
+    } );
+
+    var fname = arr[0][1];
+
+    $('.fnameWelcome').prepend("Welcome, " + fname + "  ");
+
     var submitdata = {}
 
     submitdata['slow'] = true;
@@ -168,9 +213,9 @@
 <body onload="loadEdits()">
 
 	<div class="overlay">
-	    <div class="ynh-wrapper user">
+    <div class="ynh-wrapper user">
 	  <ul class="user-menu">
-	    <!-- <li><a href=""><i class="fab fa-angellist"></i></a></li> -->
+	    <li><a href=""><i class="fnameWelcome"></i><i class="fab fa-angellist"></i></a></li>
 	  </ul>
 
 	  <a class="user-container user-container-info" href="https://home.newtelco.de">
