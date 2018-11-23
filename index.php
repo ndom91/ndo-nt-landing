@@ -116,6 +116,7 @@
 
    <script>
 
+   var fname = '';
    $(document).ready(function() {
 
     var ipnames = [
@@ -150,7 +151,7 @@
       ["192.168.11.111","Kai"],
       ["192.168.11.144","Nik"],
       ["192.168.11.71","Nik"],
-      ["192.168.11.10","Nodo"],
+      ["192.168.11.10","Nodo"]
     ];
 
     var userIP = getCookie("IP");
@@ -159,9 +160,16 @@
         return !!~el.indexOf( userIP );
     } );
 
-    var fname = arr[0][1];
+    console.log(JSON.stringify(arr));
 
-    $('.fnameWelcome').prepend("Welcome, " + fname + "  ");
+    if (JSON.stringify(arr) == '[]') {
+      var fname = '';
+    } else {
+      var fname = arr[0][1];
+    }
+
+
+    $('.fnameWelcome').prepend("Welcome " + fname + "  ");
 
     var submitdata = {}
 
