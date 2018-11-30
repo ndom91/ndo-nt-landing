@@ -68,7 +68,6 @@
     <meta name="theme-color" content="#67B246" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,700|Ubuntu+Mono:300|Roboto+Mono:300,400,700" rel="stylesheet">
-    <!-- <script type="text/javascript" src="assets/js/panel.js"></script> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
     <!-- LOAD JQUERY -->
@@ -77,10 +76,9 @@
     <!-- LOAD JQUERY UI -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel='stylesheet' />
-
+    <script type="text/javascript" src="assets/js/jquery.webticker.min.js"></script>
     <script src="assets/sugar.min.js" type="text/javascript"></script>
     <script src="assets/js/jquery.jeditable.min.js" type="text/javascript"></script>
-    <!--   <script src="assets/js/webrtcip.js" type="text/javascript"></script>   -->
     <script>
     //console.log('lIPinline: ' + lIP);
     </script>
@@ -168,7 +166,6 @@
       var fname = arr[0][1];
     }
 
-
     $('.fnameWelcome').prepend("Welcome " + fname + "  ");
 
     var submitdata = {}
@@ -184,7 +181,6 @@
       type : "text",
       onedit : function() { console.log('If I return false editing will be canceled'); return true;},
       before : function() { console.log('Triggered before form appears')},
-
       cancel : 'Cancel',
       onblur : "ignore",
       cssclass : 'editorClass',
@@ -202,22 +198,8 @@
       width : 120
     });
   });
-  </script>
-  <script>
-    //This is the "Offline copy of pages" service worker
 
-    //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-    /*  if (navigator.serviceWorker.controller) {
-        console.log('[PWA Builder] active service worker found, no need to register')
-    } else {
-        //Register the ServiceWorker
-        navigator.serviceWorker.register('pwabuilder-sw.js', {
-            scope: './'
-        }).then(function(reg) {
-            console.log('Service worker has been registered for scope:'+ reg.scope);
-        });
-    } */
-  </script>
+</script>
 <body onload="loadEdits()">
 
 	<div class="overlay">
@@ -242,7 +224,7 @@
        <li><a target="_blank" class="green4" id="a3" href="http://drive.newtelco.de"><span class="first-letter"></span><span id="a3"  class="name3">Drive</span></a></li>
        <li><a target="_blank" class="green4" id="a4" href="https://newtelcogmbh.slack.com"><span class="first-letter"></span><span id="a4"  class="name4">Slack</span></a></li>
        <li><a target="_blank" class="green1" id="a5" href="http://links.newtelco.de"><span class="first-letter"></span><span id="a5"  class="name5">Links</span></a></li>
-       <li><a target="_blank" class="green2" id="a6" href="http://vpn.newtelco.de"><span class="first-letter"></span><span id="a6"  class="name6">VPN</span></a></li>
+       <li><a target="_blank" class="green2" id="a6" href="http://drawio.newtelco.local/"><span class="first-letter"></span><span id="a6"  class="name6">draw.io</span></a></li>
        <li><a target="_blank" class="green3" id="a7" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">Help</span></a></li>
        <li><a target="_blank" class="green4" id="a8" href="http://password.newtelco.local"><span class="first-letter"></span><span id="a8"  class="name8">PW</span></a></li>
        <li><a target="_blank" class="green1" id="a9" href="https://it.newtelco.de"><span class="first-letter"></span><span id="a9"  class="name9">IT</span></a></li>
@@ -253,19 +235,33 @@
 
    </div>
 
-   <div class="ynh-wrapper footer"><nav>
-
+ <div class="ynh-wrapper footer">
+   <nav>
+     <div class="footer1">
       built with <span class="love">&hearts;</span> by <a target="_blank" class="footera" href="https://github.com/ndom91">ndom91</a> &copy;
+    </div>
+    <div class="footer2">
+      <div class="mask">
+        <ul id="webticker-update-example">
+          <li class="ticker-spacer"></li>
+          <li>[[[ NEWTELCO NEWS ]]]</li>
+          <li>New Rack Management System ("Racks" Square Above)</li>
+          <li>This Site (home.newtelco.de) now available on mobile!</li>
+          <li>Password expiration duration expanded to every 90 days</li>
+          <li class="last" > Brief computer tips and tricks session @ 10am 03.12.18 before our meeting begins</li>
+        </ul>
+        <span class="tickeroverlay-left">&nbsp;</span>
+        <span class="tickeroverlay-right">&nbsp;</span>
+      </div>
+    </div>
 
-      <!-- <a class="link-profile-edit" href="edit.html">Edit my profile</a>
-      <a class="link-documentation" href="//yunohost.org/docs" target="_blank">Documentation</a>
-      <a class="link-documentation" href="//yunohost.org/help" target="_blank">Support</a>-->
-      <a class="link-newtelco" href="https://newtelco.com" target="_blank">newtelco.com
+    <div class="footer3">
+      <a class="link-newtelco" href="https://newtelco.com" target="_blank">newtelco.com</a>
+    </div>
 
-      </a>
-   </nav></div>
-   </div>
-   </div>
+   </nav>
+  </div>
+ </div>
 </body>
 <footer>
 <script>
@@ -299,7 +295,7 @@ function loadEdits() {
   //var a4 = getCookie("a4");
   for (i = 1; i <= 12; i++) {
     if (typeof $.cookie('a'+i) !== 'undefined') {
-      console.log('a' + i + ' : ' + link[i]);
+      // console.log('a' + i + ' : ' + link[i]);
     }
   }
   for (i = 1; i <= 12; i++) {
@@ -307,10 +303,10 @@ function loadEdits() {
       JSON.parse(link[i], (key,value1) => {
           if (key == '0') {
             value1 = value1.toString(value1);
-            console.log('typeof: ' + typeof value1);
+            // console.log('typeof: ' + typeof value1);
             value1.replace('\,','');
             $("span.name" + i).text(value1);
-            console.log('span value: ' + value1);
+            // console.log('span value: ' + value1);
           }
           if (key == 1) {
             var prefix = 'http://';
@@ -320,45 +316,30 @@ function loadEdits() {
               value1 = value1.replace('+','');
             $("#a" + i).attr('href', value1);
           }
-        console.log('wtf key: ' + key); // log the current property name, the last is "".
-        console.log('wtf value: ' + value1);     // return the unchanged property value.
+        // console.log('wtf key: ' + key); // log the current property name, the last is "".
+        // console.log('wtf value: ' + value1);     // return the unchanged property value.
       })
     }
   }
 }
+
+
+
+  $("#webticker-update-example").webTicker({
+        height:'15px',
+        duplicate:true,
+        rssfrequency:0,
+        startEmpty:false,
+        hoverpause:true,
+        transition: "ease"
+    });
+    $("#stop-newsticker2").click(function(){
+        $("#webticker-update-example").webTicker('stop');
+    });
+    $("#continue-newsticker2").click(function(){
+        $("#webticker-update-example").webTicker('cont');
+    });
 </script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"  >
-
-    const button = new Crate({
-      server: '506121769141141513',
-      channel: '506121769141141515',
-      shard: 'https://vip1.widgetbot.io',
-      //color: '#67B246',
-      color: 'rgba(103, 178, 70, 0.5)',
-      // The glyph to display on the button
-      glyph: ['https://newtelco.tech/chat3.png', '100%'],
-      // Message notifications
-      notifications: true,
-      // Unread message indicator
-      indicator: true,
-      location: ['top', 'right'],
-      css: '.button {margin-right: 50px; margin-top: 0px;} .notification {margin-right: 50px; margin-top: 10px;} div .icons { margin-right: 0; margin-top: 0; }',
-    })
-
-    setTimeout(function(){
-      console.log('lIP2: ' + lIP)
-      var btnNotify = 'Welcome! ' + lIP
-
-      console.log('lIP3: ' + lIP)
-      button.notify({
-        content: btnNotify,
-        timeout: 5000,
-        color: '#67B246',
-      })}, 6000);
-
-</script>
-<script src="https://embed.small.chat/T85U0SU3YGDZE088P2.js" async></script>-->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127102919-1"></script>
