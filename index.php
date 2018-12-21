@@ -89,9 +89,7 @@
     </script>
     <script src="assets/sugar.min.js" type="text/javascript"></script>
     <script src="assets/js/jquery.jeditable.min.js" type="text/javascript"></script>
-    <script>
-    //console.log('lIPinline: ' + lIP);
-    </script>
+
     <!-- PWA -->
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json"></link>
@@ -193,22 +191,10 @@
       data   : '<?php print $array; ?>',
       indicator : "<img src='assets/spinner.svg' />",
       type : "text",
-      onedit : function() { console.log('If I return false editing will be canceled'); return true;},
-      before : function() { console.log('Triggered before form appears')},
-      cancel : 'Cancel',
-      onblur : "ignore",
       cssclass : 'editorClass',
-      cancelcssclass : 'btn btn-danger',
-      submitcssclass : 'btn btn-success',
-      maxlength : 200,
-      showfn : function(elem) { elem.fadeIn('slow') },
-      select : true,
       label : '',
-      tooltip : "Click to edit block",
-      onreset : function() { console.log('Triggered before reset') },
-      onsubmit : function() { console.log('Triggered before submit') },
-      submit : 'Save',
-      submitdata : submitdata,
+      tooltip : "[CTRL/STRG] + Click to Edit",
+      event: '',
       width : 120
     });
   });
@@ -233,16 +219,16 @@
   <div class="bottomwrapper">
    <div id="apps" class="wrapper apps">
      <ul class="listing-apps">
-       <li><a target="_blank" class="green2" id="a1" href="https://crm.newtelco.de"><span class="first-letter"></span><span id="a1"  class="name1">CRM</span></a></li>
+       <li><a target="_blank" class="green2" id="a1" onclick="" href="https://crm.newtelco.de"><span class="first-letter"></span><span id="a1"  class="name1">CRM</span></a></li>
        <li><a target="_blank" class="green3" id="a2" href="http://gmail.newtelco.de"><span class="first-letter"></span><span id="a2"  class="name2">Gmail</span></a></li>
        <li><a target="_blank" class="green4" id="a3" href="http://drive.newtelco.de"><span class="first-letter"></span><span id="a3"  class="name3">Drive</span></a></li>
        <li><a target="_blank" class="green4" id="a4" href="https://newtelcogmbh.slack.com"><span class="first-letter"></span><span id="a4"  class="name4">Slack</span></a></li>
        <li><a target="_blank" class="green1" id="a5" href="http://links.newtelco.de"><span class="first-letter"></span><span id="a5"  class="name5">Links</span></a></li>
        <li><a target="_blank" class="green2" id="a6" href="http://drawio.newtelco.local/"><span class="first-letter"></span><span id="a6"  class="name6">draw.io</span></a></li>
-       <li><a target="_blank" class="green3" id="a7" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">Help</span></a></li>
+       <li><a target="_blank" class="green3" id="a7" onclick="" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">Help</span></a></li>
        <li><a target="_blank" class="green4" id="a8" href="http://password.newtelco.local"><span class="first-letter"></span><span id="a8"  class="name8">PW</span></a></li>
        <li><a target="_blank" class="green1" id="a9" href="https://it.newtelco.de"><span class="first-letter"></span><span id="a9"  class="name9">IT</span></a></li>
-       <li><a target="_blank" class="green1" id="a10" href="http://netbox.newtelco.local"><span class="first-letter"></span><span id="a10" class="name10">Racks</span></a></li>
+       <li><a target="_blank" class="green1" id="a10" href="http://netbox.newtelco.tech"><span class="first-letter"></span><span id="a10" class="name10">Racks</span></a></li>
        <li><a target="_blank" class="green2" id="a11" href="https://nms.newtelco.tech"><span class="first-letter"></span><span id="a11" class="name11">NMS</span></a></li>
        <li><a target="_blank" class="green3" id="a12" href="https://git.newtelco.de"><span class="first-letter"></span><span id="a12" class="name12">Git</span></a></li>
      </ul>
@@ -278,6 +264,52 @@
 </body>
 <footer>
 <script>
+
+$("[class^=name]").click(function(e){
+  if (event.ctrlKey || event.metaKey) {
+    e.preventDefault();
+     var submitdata = {};
+     submitdata['slow'] = true;
+
+     $("[class^=name]").editable("save.php", {
+        loadurl  : 'load.php',
+        loadtype : 'POST',
+        loadtext : 'Loading…',
+        data   : '<?php print $array; ?>',
+        indicator : "<img src='assets/spinner.svg' />",
+        type : "text",
+        onedit : function() { console.log('If I return false editing will be canceled'); return true;},
+        before : function() { console.log('Triggered before form appears')},
+        cancel : 'Cancel',
+        onblur : "ignore",
+        cssclass : 'editorClass',
+        cancelcssclass : 'btn btn-danger',
+        submitcssclass : 'btn btn-success',
+        maxlength : 200,
+        showfn : function(elem) { elem.fadeIn('slow') },
+        select : true,
+        label : '',
+        tooltip : "[CTRL/STRG] + Click to Edit",
+        onreset : function() { console.log('Triggered before reset') },
+        onsubmit : function() { console.log('Triggered before submit') },
+        submit : 'Save',
+        submitdata : submitdata,
+        width : 120
+      });
+   } else {
+     e.stopPropagation();
+     e.stopImmediatePropagation();
+     $(this).addClass('non_edit').removeClass('edit').unbind('click.editable');
+     var id = $(this).attr('id');
+     console.log('clickedid: ' + id);
+     //window.open($("a#"+id).attr("href"), '_blank');
+   }
+});
+
+$(document).ready(function() {
+  $("[class^=name]").unbind('click.editable');
+});
+
 function getCookie(cookieName) {
   var cookieValue="";
   var beginIndex=0;
