@@ -219,13 +219,13 @@
   <div class="bottomwrapper">
    <div id="apps" class="wrapper apps">
      <ul class="listing-apps">
-       <li><a target="_blank" class="green2" id="a1" onclick="" href="https://crm.newtelco.de"><span class="first-letter"></span><span id="a1"  class="name1">CRM</span></a></li>
+       <li><a target="_blank" class="green2" id="a1" href="https://crm.newtelco.de"><span class="first-letter"></span><span id="a1"  class="name1">CRM</span></a></li>
        <li><a target="_blank" class="green3" id="a2" href="http://gmail.newtelco.de"><span class="first-letter"></span><span id="a2"  class="name2">Gmail</span></a></li>
        <li><a target="_blank" class="green4" id="a3" href="http://drive.newtelco.de"><span class="first-letter"></span><span id="a3"  class="name3">Drive</span></a></li>
        <li><a target="_blank" class="green4" id="a4" href="https://newtelcogmbh.slack.com"><span class="first-letter"></span><span id="a4"  class="name4">Slack</span></a></li>
        <li><a target="_blank" class="green1" id="a5" href="http://links.newtelco.de"><span class="first-letter"></span><span id="a5"  class="name5">Links</span></a></li>
        <li><a target="_blank" class="green2" id="a6" href="http://drawio.newtelco.local/"><span class="first-letter"></span><span id="a6"  class="name6">draw.io</span></a></li>
-       <li><a target="_blank" class="green3" id="a7" onclick="" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">Help</span></a></li>
+       <li><a target="_blank" class="green3" id="a7" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">Help</span></a></li>
        <li><a target="_blank" class="green4" id="a8" href="http://password.newtelco.local"><span class="first-letter"></span><span id="a8"  class="name8">PW</span></a></li>
        <li><a target="_blank" class="green1" id="a9" href="https://it.newtelco.de"><span class="first-letter"></span><span id="a9"  class="name9">IT</span></a></li>
        <li><a target="_blank" class="green1" id="a10" href="http://netbox.newtelco.tech"><span class="first-letter"></span><span id="a10" class="name10">Racks</span></a></li>
@@ -243,11 +243,16 @@
       <div class="mask">
         <ul id="ntnews-ticket">
           <li class="ticker-spacer"></li>
-          <li>[[[ NEWTELCO NEWS ]]]</li>
-          <li>New Rack Management System ("Racks" Square Above)</li>
-          <li>This Site (home.newtelco.de) now available on mobile!</li>
-          <li><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i> Merry Christmas<i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i></li>
-          <li class="last">Password expiration expanded to every 90 days - you will receive daily emails starting 5 days before yours expires</li>
+          <li> <i class="fas fa-server"></i> NEWTELCO NEWS <i class="fas fa-server"></i> </li>
+          <li>Rack Management System ("Racks" Block)</li>
+          <li> | </li>
+          <li>This Site (home.newtelco.de) now available on all mobiles!</li>
+          <li> | </li>
+          <li>Editing of Blocks changed to "STRG/CTRL + Click"</li>
+          <li> | </li>
+          <li><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i>  Merry Christmas  <i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i></li>
+          <li> | </li>
+          <li class="last">Password expiration now every 90 days - you will receive daily email notifications starting 5 days before</li>
         </ul>
         <span class="tickeroverlay-left">&nbsp;</span>
         <span class="tickeroverlay-right">&nbsp;</span>
