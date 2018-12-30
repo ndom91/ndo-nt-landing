@@ -209,7 +209,9 @@
 	<div class="overlay">
     <div class="ynh-wrapper user">
 	  <ul class="user-menu">
-	    <li><a href=""><i class="fnameWelcome"></i><i class="twa twa-christmas-tree"></i><!--<i class="fab fa-angellist"></i>--></a></li>
+      <!-- twemoji home:          http://ellekasai.github.io/twemoji-awesome/
+           twemoji cheat sheet:   https://www.webfx.com/tools/emoji-cheat-sheet/ -->
+	    <li><a href=""><i class="fnameWelcome"></i><i class="twa twa-tada"></i></a></li>
 	  </ul>
 
 	  <a class="user-container user-container-info" href="https://home.newtelco.de">
@@ -254,7 +256,7 @@
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
           <li>Editing of Blocks changed to "STRG/CTRL + Click"</li>
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
-          <li><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i>  Merry Christmas  <i class="twa twa-christmas-tree"></i><i class="twa twa-santa"></i><i class="twa twa-christmas-tree"></i></li>
+          <li><i class="twa twa-sparkler"></i><i class="twa twa-tada"></i><i class="twa twa-beers"></i>  Happy New Years!  <i class="twa twa-beers"></i><i class="twa twa-tada"></i><i class="twa twa-sparkler"></i></li>
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
           <li class="last">Password expiration now every 90 days - you will receive daily email notifications starting 5 days before</li>
         </ul>
