@@ -80,9 +80,17 @@
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel='stylesheet' />
     <!-- LOAD JQUERY UI -->
 
+    <!-- jQuery Modal -->
+    <link rel="stylesheet" href="assets/css/iziModal.css">
+    <script src="assets/js/iziModal.js" type="text/javascript"></script>
+
     <!-- twemoji -->
     <link type="text/css" rel="stylesheet" href="assets/css/twemoji.css" />
 
+    <!-- mdl -->
+    <link type="text/css" rel="stylesheet" href="assets/css/material_snackbar.css" />
+    <script src="assets/js/material.js" type="text/javascript"></script>
+    
     <!-- hover css -->
     <link type="text/css" rel="stylesheet" href="assets/css/hover.min.css" />
 
@@ -144,7 +152,7 @@
       ["192.168.11.98","Felix"],
       ["192.168.11.133","Andreas"],
       ["192.168.11.69","Georg"],
-      ["192.168.11.79","Irina"],
+      ["192.168.11.79","Alina"],
       ["192.168.11.78","Alina"],
       ["192.168.11.92","Tatjana"],
       ["192.168.11.83","Dmitri"],
@@ -161,7 +169,7 @@
       ["192.168.11.107","Nodar"],
       ["192.168.11.145","Paul"],
       ["192.168.1.26","Maria"],
-      ["192.168.11.39","Natascha"],
+      ["192.168.11.164","Natascha"],
       ["192.168.11.111","Kai"],
       ["192.168.11.144","Nik"],
       ["192.168.11.71","Nik"],
@@ -211,7 +219,7 @@
 	  <ul class="user-menu">
       <!-- twemoji home:          http://ellekasai.github.io/twemoji-awesome/
            twemoji cheat sheet:   https://www.webfx.com/tools/emoji-cheat-sheet/ -->
-	    <li><a href=""><i class="fnameWelcome"></i><i class="twa twa-tada"></i></a></li>
+	    <li><a href=""><i class="fnameWelcome"></i><i class="twa twa-zap"></i></a></li>
 	  </ul>
 
 	  <a class="user-container user-container-info" href="https://home.newtelco.de">
@@ -230,13 +238,13 @@
        <li><a target="_blank" class="green4" id="a3" href="http://drive.newtelco.de"><span class="first-letter"></span><span id="a3"  class="name3">drive</span></a></li>
        <li><a target="_blank" class="green4" id="a4" href="https://chat.google.com"><span class="first-letter"></span><span id="a4"  class="name4">gchat</span></a></li>
        <li><a target="_blank" class="green1" id="a5" href="http://links.newtelco.de"><span class="first-letter"></span><span id="a5"  class="name5">links</span></a></li>
-       <li><a target="_blank" class="green2" id="a6" href="http://drawio.newtelco.local/"><span class="first-letter"></span><span id="a6"  class="name6">draw.io</span></a></li>
+       <li><a target="_blank" class="green2" id="a6" href="https://draw.io/"><span class="first-letter"></span><span id="a6"  class="name6">draw.io</span></a></li>
        <li><a target="_blank" class="green3" id="a7" href="http://help.newtelco.de"><span class="first-letter"></span><span id="a7"  class="name7">help</span></a></li>
        <li><a target="_blank" class="green4" id="a8" href="http://password.newtelco.local"><span class="first-letter"></span><span id="a8"  class="name8">pw</span></a></li>
        <li><a target="_blank" class="green1" id="a9" href="https://it.newtelco.de"><span class="first-letter"></span><span id="a9"  class="name9">admin</span></a></li>
        <li><a target="_blank" class="green1" id="a10" href="http://netbox.newtelco.tech"><span class="first-letter"></span><span id="a10" class="name10">racks</span></a></li>
        <li><a target="_blank" class="green2" id="a11" href="https://nms.newtelco.tech"><span class="first-letter"></span><span id="a11" class="name11">nms</span></a></li>
-       <li><a target="_blank" class="green3" id="a12" href="https://git.newtelco.de"><span class="first-letter"></span><span id="a12" class="name12">git</span></a></li>
+       <li><a target="_blank" class="green3" id="a12" href="https://jira.newtelco.de"><span class="first-letter"></span><span id="a12" class="name12">jira</span></a></li>
      </ul>
 
    </div>
@@ -250,15 +258,15 @@
         <ul id="ntnews-ticket">
           <li class="ticker-spacer"></li>
           <li> <i class="fas fa-server"></i> <b style="letter-spacing:2px; margin: 0 13px; color: #67B246;">NEWTELCO NEWS</b> <i class="fas fa-server"></i> </li>
-          <li>Rack Management System ("Racks" Block)</li>
+          <li><i class="twa twa-tada"></i> Welcome to the new office! <i class="twa twa-tada"></i></li>
+          <!-- <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li> -->
+          <!-- <li><i class="twa twa-sparkler"></i><i class="twa twa-tada"></i><i class="twa twa-beers"></i>  Happy New Years!  <i class="twa twa-beers"></i><i class="twa twa-tada"></i><i class="twa twa-sparkler"></i></li> -->
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
-          <li>This Site (home.newtelco.de) now available on all mobiles!</li>
+          <li><font style="font-weight: 700;">[STRG/CTRL + Click] to edit significantly updated!</font></li>
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
-          <li>Editing of Blocks changed to "STRG/CTRL + Click"</li>
+          <li>This Site (home.newtelco.de) available on mobile!</li>
           <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
-          <li><i class="twa twa-sparkler"></i><i class="twa twa-tada"></i><i class="twa twa-beers"></i>  Happy New Years!  <i class="twa twa-beers"></i><i class="twa twa-tada"></i><i class="twa twa-sparkler"></i></li>
-          <li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>
-          <li class="last">Password expiration now every 90 days - you will receive daily email notifications starting 5 days before</li>
+          <li class="last">Domain password expiration changed to 90 days including email notifications</li>
         </ul>
         <span class="tickeroverlay-left">&nbsp;</span>
         <span class="tickeroverlay-right">&nbsp;</span>
@@ -273,72 +281,169 @@
   </div>
  </div>
 </body>
+<!-- Modal -->
+<div id="modal"> 
+  <div class="modalEdit">
+    <form id="editForm">
+    <h3 class="subTitle">Edit Link</h3>
+    <div onKeyPress="return checkSubmit(event)" class="modalInputs">
+      <input class="editLabel" placeholder="Name"/>
+      <input class="editURL" placeholder="URL"/>
+    </div>
+    <div class="btns">
+      <a type="submit" class="btnSubmit">Save</a>
+      <a type="submit" class="btnReset">Reset Block</a>
+    </div>
+    </form>
+  </div>
+</div>
+<div class="mdl-snackbar mdl-js-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button type="button" class="mdl-snackbar__action"></button>
+</div>
 <footer>
 <script>
+var targethref='';
 
-$("[class^=name]").click(function(e){
+/************************
+ * Cookie Functions
+ ************************/
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
+
+/************************
+ * Editing Functions
+ ************************/
+
+function applyEdit(target, label, url) {
+  if (url.indexOf("http") < 1) {
+    url = "http://" + url;
+    // console.log(url);
+  }
+  $("span#" + target).text(label);
+  $("a#" + target).attr('href', url);
+}
+
+$(".listing-apps > li").click(function(e){
   if (event.ctrlKey || event.metaKey) {
     e.preventDefault();
-     var submitdata = {};
-     submitdata['slow'] = true;
 
-     $("[class^=name]").editable("save.php", {
-        loadurl  : 'load.php',
-        loadtype : 'POST',
-        loadtext : 'Loading…',
-        data   : '<?php print $array; ?>',
-        indicator : "<img src='assets/spinner.svg' />",
-        type : "text",
-        onedit : function() { console.log('If I return false editing will be canceled'); return true;},
-        before : function() { console.log('Triggered before form appears')},
-        cancel : 'Cancel',
-        onblur : "ignore",
-        cssclass : 'editorClass',
-        cancelcssclass : 'btn btn-danger',
-        submitcssclass : 'btn btn-success',
-        maxlength : 200,
-        showfn : function(elem) { elem.fadeIn('slow') },
-        select : true,
-        label : '',
-        tooltip : "[CTRL/STRG] + Click to Edit",
-        onreset : function() { console.log('Triggered before reset') },
-        onsubmit : function() { console.log('Triggered before submit') },
-        submit : 'Save',
-        submitdata : submitdata,
-        width : 120
-      });
+    $('.user').css('filter','blur(2px)');
+    $('.listing-apps').css('filter','blur(2px)');
+    $('.footer').css('filter','blur(2px)');
+    
+    
+    targethref = $( event.target ).closest('a').attr('id');
+
+    $("#modal").iziModal({
+      onOpening: function(){
+        $('.modalEdit').css('opacity','1');
+        $('.modalEdit').css('z-index','100');
+        $('.editLabel').val('');
+        $('.editURL').val('');
+      },
+      onClosing: function(){
+        $('.modalEdit').css('opacity','0');
+        $('.user').css('filter','blur(0px)');
+        $('.listing-apps').css('filter','blur(0px)');
+        $('.footer').css('filter','blur(0px)');
+      },
+      radius: 10,
+      theme: 'light',
+      title: 'Change Box',
+      width: '250px',
+      focusInput: true,
+      headerColor: '#67B246',
+      transitionOut: 'bounceOutDown'
+    });
+    
+    $('#modal').iziModal('open', { });
+
    } else {
      e.stopPropagation();
      e.stopImmediatePropagation();
      $(this).addClass('non_edit').removeClass('edit').unbind('click.editable');
      var id = $(this).attr('id');
-     console.log('clickedid: ' + id);
-     //window.open($("a#"+id).attr("href"), '_blank');
+    //  console.log('clickedid: ' + id);
    }
-});
+   
 
-$(document).ready(function() {
-  $("[class^=name]").unbind('click.editable');
-});
+    $("#modal").on('click', '.btnSubmit', function(e) {
+      e.preventDefault();
+      editName = $('.editLabel').val();
+      editValue = $('.editURL').val();
+      if (editName.length > 8) {
+        var notification = document.querySelector('.mdl-js-snackbar');
+        notification.MaterialSnackbar.showSnackbar(
+          {
+            message: 'Names must be shorter than 9 characters'
+          }
+        );
+        return;
+      }
+      if (editValue.indexOf('.') < 1) {
+        var notification = document.querySelector('.mdl-js-snackbar');
+        notification.MaterialSnackbar.showSnackbar(
+          {
+            message: 'Are you sure that is a valid URL?'
+          }
+        );
+        return;
+      }
+      setCookie(targethref,editName + "," + editValue, 36000);
+      applyEdit(targethref,editName,editValue);
+      $('#modal').iziModal('close', {});
+      delete targethref;
+    });
 
-function getCookie(cookieName) {
-  var cookieValue="";
-  var beginIndex=0;
-  var endIndex=0;
-  var cookies=document.cookie;
-  if (cookies.length >0) {
-    beginIndex=cookies.indexOf(cookieName+"=");
-    if (beginIndex !=-1) {
-      beginIndex +=cookieName.length+1;
-      endIndex=cookies.indexOf(";", beginIndex);
-      //if it the last cookie
-      if (endIndex == -1)
-          endIndex=cookies.length;
-       cookieValue=unescape(cookies.substring(beginIndex,endIndex));
-    }
+    $("#modal").on('click', '.btnReset', function(e) {
+      e.preventDefault();
+      var originalLabel = $("span#" + targethref).defaultValue;
+      var originalURL = $("a#" + targethref).defaultValue;
+      // console.log('originalLabel: ' + originalLabel);
+      // console.log(originalLabel);
+      // console.log('originalURL: ' + originalURL);
+      // console.log(originalURL);
+      eraseCookie(targethref);
+      $("span#" + targethref).text(originalLabel);
+      $("a#" + targethref).attr('href', originalURL);
+      $('#modal').iziModal('close', {});
+      window.location.href = "https://home.newtelco.de";
+    });
+    
+  });
+
+function checkSubmit(e) {
+  if(e && e.keyCode == 13) {
+      // document.forms[0].submit();
+      $('.btnSubmit').click();
   }
-  return cookieValue;
 }
+
 function loadEdits() {
 
   var link = [];
@@ -348,37 +453,29 @@ function loadEdits() {
       link[i] = getCookie("a" + i);
     }
   }
-  //var a4 = getCookie("a4");
+
   for (i = 1; i <= 12; i++) {
     if (typeof $.cookie('a'+i) !== 'undefined') {
-      // console.log('a' + i + ' : ' + link[i]);
-    }
-  }
-  for (i = 1; i <= 12; i++) {
-    if (typeof $.cookie('a'+i) !== 'undefined') {
-      JSON.parse(link[i], (key,value1) => {
-          if (key == '0') {
-            value1 = value1.toString(value1);
-            // console.log('typeof: ' + typeof value1);
-            value1.replace('\,','');
-            $("span.name" + i).text(value1);
-            $("span.name" + i).closest('a').children('.first-letter').text('');
-            // console.log('span value: ' + value1);
-          }
-          if (key == 1) {
-            var prefix = 'http://';
-              if (value1.substr(0, prefix.length) !== prefix) {
-                  value1 = prefix + value1;
-              }
-              value1 = value1.replace('+','');
-            $("#a" + i).attr('href', value1);
-          }
-        // console.log('wtf key: ' + key); // log the current property name, the last is "".
-        // console.log('wtf value: ' + value1);     // return the unchanged property value.
-      })
+      var cookieVal = link[i];
+      
+      var cookieArray = cookieVal.split(",");
+      var cookieLabel = cookieArray[0];
+      var cookieURL = cookieArray[1];
+
+      if (cookieURL.indexOf("http") < 1) {
+        cookieURL = "http://" + cookieURL;
+      }
+
+      $("span#a" + i).text(cookieLabel);
+      $("a#a" + i).attr('href', cookieURL);
     }
   }
 }
+
+
+/************************
+ * Ticker Functions
+ ************************/
 
 $( document ).ready(function() {
   $("#ntnews-ticket").webTicker({
@@ -386,8 +483,7 @@ $( document ).ready(function() {
         duplicate:true,
         rssfrequency:0,
         startEmpty:false,
-        hoverpause:true,
-        transition: "ease"
+        hoverpause:true
     });
     $("#stop-newsticker2").click(function(){
         $("#ntnews-ticket").webTicker('stop');
@@ -396,6 +492,10 @@ $( document ).ready(function() {
         $("#ntnews-ticket").webTicker('cont');
     });
 });
+
+/************************
+ * Scrollbars
+ ************************/
 
 document.addEventListener("DOMContentLoaded", function() {
   //The first argument are the elements to which the plugin shall be initialized
@@ -406,7 +506,9 @@ document.addEventListener("DOMContentLoaded", function() {
     sizeAutoCapable : false
   });
 });
+
 </script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127102919-1"></script>
 <script>
