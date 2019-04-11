@@ -541,14 +541,14 @@
         var trelloLbl = '';
 
         var membersSuccess = function(successMsg) {
-            console.log(JSON.stringify(successMsg));
+            // console.log(JSON.stringify(successMsg));
             trelloMembers = successMsg;
         }
 
         var trelloMembers = Trello.get('/boards/5c671254bcea64060f2d0161/members', membersSuccess);
 
         var labelsSuccess = function(successMsg) {
-            console.log(JSON.stringify(successMsg));
+            // console.log(JSON.stringify(successMsg));
             trelloLbl = successMsg;
         }
 
@@ -558,63 +558,14 @@
           var cards = [];
           var users = [];
           var labels = [];
-          console.log("%c Debugging Trello API Response: ", "background: #67B246; color: #fff; font-weight: 700; font-size: large;");
-          console.log(successMsg);
-          console.log(trelloMembers);
-          console.log(trelloLbl);
+        //   DEBUGGING STATEMENTS
+        //   console.log("%c Debugging Trello API Response: ", "background: #67B246; color: #fff; font-weight: 700; font-size: large;");
+        //   console.log(successMsg);
+        //   console.log(trelloMembers);
+        //   console.log(trelloLbl);
           $.each(successMsg, function(index, value) {
             if (value.idList != "5c67128447e0f057aba1e9ae") {
-              var IDname = 'spacer';
-            //   var trelloIDs = [
-            //     ["5abcfefeb3ff97b6417f5812", "ndomino","nicodomino"],
-            //     ["5c6a8188dcf25a64737e2338", "sstergiou","steliosstergiou"],
-            //     ["5c6a7e362fcb9d6c457654e4", "alissitsin","andreaslissitsin"],
-            //     ["5bfd6157ae9d333eba19812f","fwaleska","felixwaleska"],
-            //     ["5c6a832d4615934e3e0ad52b", "kmoeller","kaymoeller"],
-            //     ["5c6a85c29e38ee2117c9388a","nsaldadze","nodarsaldadze"],
-            //     ["5c6ab25d75887057b2ed4459","jharfert","jurijharfert"],
-            //     ["5c6aad78eb424e51061e33fc","nchachua","nikchachua"],
-            //     ["5c767a4e8ce49582591c49b4", "mleidemer", "marioleidemer"],
-            //     ["5c6c091cad532127e01dead2", "kkoester", "kaikoester"],
-            //     ["5c767ad55ed1e658b83311ca", "gbormet", "georgbormet"],
-            //     ["5c73bb0fcba5af3b5e01432f", "jskribek", "jensskribek"]
-            //   ]
-            //   var trelloLabels = [
-            //     ["5c67ecd213056722c54209d2", "itenos"],
-            //     ["5c67ecb74cd2de8d70eea667", "eshelter"],
-            //     ["5c67125491d0c2ddc5c26293", "equinix"],
-            //     ["5c67eb116cf7a78047f046e7", "office"],
-            //     ["5c67125491d0c2ddc5c2628c", "newtelco"],
-            //     ["5c67eafebfe0db27716f443d", "lager"],
-            //     ["5c67eaf2d4183f015789aa4a", "rot"],
-            //     ["5c67125491d0c2ddc5c2628d", "interxion"],
-            //     ["5c67ecd213056722c54209d2", "office"],
-            //     ["5c67eb4cd893e72270d66825", "purple"]
-            //   ]
               cards.push([value.name,value.shortUrl]);
-              if (value.idLabels.length != 0) {
-                for (i = 0; i < value.idLabels.length; i++) {
-                  var labelID = value.idLabels[i];
-                  var labelarr = trelloLabels.filter( function( el ) {
-                    return el[0] == labelID;
-                  });
-                  var labelname = JSON.stringify(labelarr[0][1]);
-                  labels.push([value.name,labelname]);
-                }
-              }
-              if (value.idMembers.length != 0) {
-                for (i = 0; i < value.idMembers.length; i++) {
-                  var userID = value.idMembers[i];
-                  var IDarr = trelloIDs.filter( function( el ) {
-                    return el[0] == userID;
-                  });
-                  // console.log('IDarr: ' + IDarr);
-                  var IDname = JSON.stringify(IDarr[0][1]);
-                  var IDurl = IDarr[0][2];
-                  // console.log('IDurl: ' + IDurl);
-                  users.push([value.name,IDname,IDurl]);
-                }
-              }
             }
           })
           var cardLi = '';
@@ -625,23 +576,24 @@
               var cardImg = '';
               var cardName = cards[i][0];
               var shortUrl = cards[i][1];
-              for (b = 0; b < users.length; b++) {
-                if (users[b][0] == cardName) {
-                  username = users[b][1];
-                  userURL = users[b][2];
-                  username = username.replace(/"/g,"");
-                  username = username.trim();
-                  cardImg = cardImg + '<a target="_blank" href="https://trello.com/' + userURL + '"><img title="' + username + '" class="trelloIcons" src="assets/people/' + username + '.png"/></a>';
-                }
+            
+              for(b = 0; b < successMsg[i].idMembers.length; b++) {
+                let userObj = trelloMembers.find(obj => {
+                    return obj.id == successMsg[i].idMembers[b]
+                })
+                var username = userObj.username;
+                cardImg = cardImg + '<a target="_blank" href="https://trello.com/' + username + '"><img title="' + username + '" class="trelloIcons" src="assets/people/' + username + '.png"/></a>';
               }
-              for (e = 0; e < labels.length; e++) {
-                if (labels[e][0] == cardName) {
-                  labelName = labels[e][1];
-                  labelName = labelName.replace(/"/g,"");
-                  labelName = labelName.trim();
-                  labelLi = labelLi + '<span class="labelLabel">' + labelName + '</span>';
-                }
+
+              for(c = 0; c < successMsg[i].idLabels.length; c++) {
+                let labelObj = trelloLbl.find(obj => {
+                    return obj.id == successMsg[i].idLabels[c]
+                })
+                var labelName = labelObj.name;
+                var labelColor = labelObj.color;
+                labelLi = labelLi + '<span style="box-shadow: inset 0px 0px 13px -5px ' + labelColor + '" class="labelLabel">' + labelName + '</span>';
               }
+
               cardLi = cardLi + '<li data-update="item' + [i] + '">' + cardImg + '<a target="_blank" href="' + shortUrl + '">' + cardName + '</a>' + labelLi + '</li><li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>';
               $('#trelloUL').append('<li data-update="item' + [i] + '"></li>');
             }
