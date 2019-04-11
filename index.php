@@ -336,20 +336,20 @@
 </head>
 
 <script>
-    var iptechnik = [
-      ["192.168.11.118","Kay"],
-      ["192.168.11.87","Stelios"],
-      ["192.168.11.98","Felix"],
-      ["192.168.11.133","Andreas"],
-      // ["192.168.11.69","Georg"],
-      ["192.168.11.107","Nodar"],
-      ["192.168.11.132","Jurij"], 
-      ["192.168.11.111","Kai"],
-      ["192.168.11.71","Nik"],
-      ["192.168.11.139","Nico"],
-      ["192.168.178.92","Nico"],
-      ["192.168.11.43","Jens"]
-    ];
+    // var iptechnik = [
+    //   ["192.168.11.118","Kay"],
+    //   ["192.168.11.87","Stelios"],
+    //   ["192.168.11.98","Felix"],
+    //   ["192.168.11.133","Andreas"],
+    //   // ["192.168.11.69","Georg"],
+    //   ["192.168.11.107","Nodar"],
+    //   ["192.168.11.132","Jurij"], 
+    //   ["192.168.11.111","Kai"],
+    //   ["192.168.11.71","Nik"],
+    //   ["192.168.11.139","Nico"],
+    //   ["192.168.178.92","Nico"],
+    //   ["192.168.11.43","Jens"]
+    // ];
 
    var fname = '';
 
@@ -523,6 +523,8 @@
 
             </nav>
         <script>
+
+        // TRELLO FUNCTION FOR TECHNIK!
         function authenticationSuccess() {
             $("#trelloUL").webTicker({
                 height:'25px',
@@ -591,7 +593,7 @@
                 })
                 var labelName = labelObj.name;
                 var labelColor = labelObj.color;
-                labelLi = labelLi + '<span style="box-shadow: inset 0px 0px 13px -5px ' + labelColor + '" class="labelLabel">' + labelName + '</span>';
+                labelLi = labelLi + '<span style="box-shadow: inset 0px 0px 20px -5px ' + labelColor + '" class="labelLabel">' + labelName + '</span>';
               }
 
               cardLi = cardLi + '<li data-update="item' + [i] + '">' + cardImg + '<a target="_blank" href="' + shortUrl + '">' + cardName + '</a>' + labelLi + '</li><li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>';
@@ -851,27 +853,41 @@
             userIP = ipArray[0];
         }
 
-        var arr2 = iptechnik.filter(function(el2) {
-            return !!~el2.indexOf(userIP);
-        });
-
-        if (JSON.stringify(arr2) == '[]') {
-            $('.trelloWrapper').html("");
-            var fname = '';
-        } else {
-            // TODO Uncomment to activate trello on Header
-            window.Trello.authorize({
-                type: 'popup',
-                name: 'Newtelco Trello App',
-                scope: {
-                    read: 'true',
-                    write: 'false'
-                },
-                expiration: 'never',
-                success: authenticationSuccess
-                // error: alert("Auth Failed!")
+        // GET TECHNIK IPs FROM VARIABLE ABOVE
+        // var arr2 = iptechnik.filter(function(el2) {
+        //     return !!~el2.indexOf(userIP);
+        // });
+        
+        // GET TECHNIK IPs FROM LDAP FROM PHP FILE
+        $.ajax({
+            url: 'ldap.php'
+        }).done(function(response) {
+            var ip_array = JSON.parse(response);
+            ip_array.push("192.168.178.92");
+            console.log(ip_array);
+            console.log(userIP);
+            var arr3 = ip_array.filter(function(el2) {
+                return !!~el2.indexOf(userIP);
             });
-        }
+            if (JSON.stringify(arr3) == '[]') {
+                $('.trelloWrapper').html("");
+                var fname = '';
+            } else {
+                // TODO Uncomment to activate trello on Header
+                window.Trello.authorize({
+                    type: 'popup',
+                    name: 'Newtelco Trello App',
+                    scope: {
+                        read: 'true',
+                        write: 'false'
+                    },
+                    expiration: 'never',
+                    success: authenticationSuccess
+                    // error: alert("Auth Failed!")
+                });
+            }
+        })
+
     </script>
     <!-- Google Analytics End -->
 
