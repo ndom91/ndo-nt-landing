@@ -147,6 +147,11 @@ img {
 /* ==========================================================================
    1.5 = Modal
    ========================================================================== */
+.iziModal-header-title {
+  font-family: 'Rajdhani' !important;
+  font-weight: 700;
+  font-size: 20px !important;
+}
 h3.subTitle {
   font-family: 'Rajdhani';
 }
@@ -424,14 +429,22 @@ h3.subTitle {
     border-color:#ac2925
 }
 
-@media screen and (min-width: 800px) and (max-height: 730px) {
+
+@media screen and (min-width: 800px) and (min-height: 851px) and (max-height: 890px) {
   .apps {
-    transform: scale(0.6);
+    transform: scale(0.9);
     height: 0px !important;
   }
 }
 
-@media screen and (min-width: 800px) and (min-height: 731px) and (max-height: 850px) {
+@media screen and (min-width: 800px) and (max-height: 775px) {
+  .apps {
+    transform: scale(0.7);
+    height: 0px !important;
+  }
+}
+
+@media screen and (min-width: 800px) and (min-height: 776px) and (max-height: 850px) {
   .apps {
     transform: scale(0.8);
     height: 0px !important;
@@ -794,6 +807,7 @@ i.fa-angellist:hover {
   float:right;
   text-align: right;
 }
+
 #ntnews-ticket {
   font-family: 'Rajdhani' !important;
   font-size: 14px !important;
@@ -801,6 +815,61 @@ i.fa-angellist:hover {
   color: #fff;
   opacity: 0.7;
 }
+
+.labelLabel {
+  /* margin: 2px; */
+  margin-left: 4px;
+  /* margin-bottom: 3px; */
+  vertical-align: top;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 5px;
+  padding: 0 3px;
+  box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2);
+}
+/* TODO Change display to activate */
+
+.trelloWrapper {
+  width: 98%;
+  margin: 0 auto;
+  display: inline-block;
+  /* display: none; */
+}
+
+.trelloHeader {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Rajdhani';
+  width:55px;
+  margin-bottom: 4px;
+  margin-left: 25px;
+}  
+
+.trelloHeader + .tickercontainer {
+  display: inline-block !important;
+  width: 89%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.trelloIcons {
+  margin-right: 5px;
+  max-width: 16px;
+  max-height: 16px;
+  vertical-align: middle;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+#trelloUL {
+  font-family: 'Rajdhani' !important;
+  font-size: 14px !important;
+  font-weight: 200 !important;
+  color: #fff;
+  opacity: 0.7;
+  display: inline-block;
+}
+
 @media screen and (max-width: 480px) {
   .footer a {
     display: inline-block;
@@ -809,6 +878,9 @@ i.fa-angellist:hover {
     content: none;
   }
   .footer2 {
+    display: none;
+  }
+  .trelloWrapper {
     display: none;
   }
 }
