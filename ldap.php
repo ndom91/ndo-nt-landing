@@ -1,13 +1,12 @@
 <?php
 
-$ldaprdn  = 'NEWTELCOSRV\jcleese';     // ldap rdn oder dn
-$ldappass = 'N3wt3lco';  // entsprechendes password
+function ldapIPQuery($dn, $filter) {
 
-$ds=ldap_connect("ldap://ldap.newtelco.dev:389");  // must be a valid LDAP server!
-
-if ($ds) { 
+    $ldaprdn  = 'NEWTELCOSRV\jcleese';     // ldap rdn oder dn
+    $ldappass = 'N3wt3lco';  // entsprechendes password
+    $ds=ldap_connect("ldap://ldap.newtelco.dev:389");  // must be a valid LDAP server!
     $r=ldap_bind($ds, $ldaprdn, $ldappass);     // this is an "anonymous" bind, typically
-    $sr=ldap_search($ds, "OU=Technik,OU=Users,OU=Frankfurt,dc=NEWTELCO,dc=LOCAL", "(&(cn=*)(objectCategory=computer))");  
+    $sr=ldap_search($ds, $dn, $filter);  
     $info = ldap_get_entries($ds, $sr);
     $attrs = ldap_get_attributes($ds,$info);
 
@@ -19,10 +18,22 @@ if ($ds) {
         $ip_list[] = $userIPAddress;
     }
 
-    echo json_encode($ip_list);
+    return json_encode($ip_list);
     ldap_close($ds);
-} else {
-    echo "<h4>Unable to connect to LDAP server</h4>";
+}
+
+if(isset($_GET['technik_computers'])){
+    $technikDN = "OU=Technik,OU=Users,OU=Frankfurt,dc=NEWTELCO,dc=LOCAL";
+    $technikFilter = "(&(cn=*)(objectCategory=computer))";
+
+    echo ldapIPQuery($technikDN,$technikFilter);
+
+} else if(isset($_GET['all_computers'])) {
+    $allDN = "OU=Users,OU=Frankfurt,dc=NEWTELCO,dc=LOCAL";
+    $allFilter = "(&(cn=*)(objectCategory=computer))";
+
+    echo ldapIPQuery($allDN,$allFilter);
+
 }
 
 ?>
