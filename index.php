@@ -87,64 +87,38 @@
    var fname = '';
 
    $(document).ready(function() {
+    
+    $.ajax({
+        url: 'ldap.php?all_users'
+    }).done(function(response) {
 
-    var ipnames = [
-      ["192.168.11.139","Nico"],
-      ["192.168.11.43","Jens"],
-      ["192.168.11.76","Nataliya"],
-      ["192.168.11.99","Mario"],
-      ["192.168.11.118","Kay"],
-      ["192.168.11.87","Stelios"],
-      ["192.168.11.71","Nik"],
-      ["192.168.11.98","Felix"],
-      ["192.168.11.133","Andreas"],
-      ["192.168.11.69","Georg"],
-      ["192.168.11.79","Alina"],
-      ["192.168.11.78","Alina"],
-      ["192.168.11.92","Tatjana"],
-      ["192.168.11.83","Dmitri"],
-      ["192.168.11.86","German"],
-      ["192.168.11.84","Nadezda"],
-      ["192.168.11.82","Svetlana"],
-      ["192.168.11.61","Svetlana"],
-      ["192.168.11.74","Elena"],
-      ["192.168.11.72","Sascha"],
-      ["192.168.11.14","Olga"],
-      ["192.168.11.73","Tamila"],
-      ["192.168.11.42","Jurij"],
-      ["192.168.11.85","Dmitry"],
-      ["192.168.11.107","Nodar"],
-      ["192.168.11.145","Paul"],
-      ["192.168.1.26","Maria"],
-      ["192.168.11.164","Natascha"],
-      ["192.168.11.111","Kai"],
-      ["192.168.11.144","Nik"],
-      ["192.168.11.71","Nik"],
-      ["192.168.11.10","Nodo"],
-      ["192.168.178.92","Nico"]
-    ];
-      
-    var userIP = getCookie("IP");
+        var userIP = getCookie("IP");
 
-    // if ipv4 and ipv6 are returned..
-    if(userIP.indexOf(",") != -1) {
-        var ipArray = userIP.split(",");
-        userIP = ipArray[0];
-    }
+        // if ipv4 and ipv6 are returned..
+        // if(userIP.indexOf(",") != -1) {
+        //     var ipArray = userIP.split(",");
+        //     userIP = ipArray[0];
+        // }
 
-    var arr = ipnames.filter( function( el ) {
-        return !!~el.indexOf( userIP );
-    } );
+        var ip_array = JSON.parse(response);
 
-    //console.log(JSON.stringify(arr));
+        // Custom Add PCs / Users not in AD
+        ip_array.push(["192.168.11.139","Nico"]);
+        ip_array.push(["192.168.13.93","Matthias"]);
 
-    if (JSON.stringify(arr) == '[]') {
-      var fname = '';
-    } else {
-      var fname = arr[0][1];
-    }
+        var arr = ip_array.filter( function( el ) {
+            return !!~el.indexOf( userIP );
+        } );
 
-    $('.fnameWelcome').prepend("Welcome " + fname + "  ");
+        if (JSON.stringify(arr) == '[]') {
+            var fname = '';
+        } else {
+            var fname = arr[0][1];
+        }
+
+        $('.fnameWelcome').prepend("Welcome " + fname + "  ");
+
+    })
 
   });
   

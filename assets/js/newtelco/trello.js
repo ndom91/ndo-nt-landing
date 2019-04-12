@@ -99,8 +99,9 @@ $.ajax({
 }).done(function(response) {
     var ip_array = JSON.parse(response);
     ip_array.push("192.168.178.92");
-    console.log(ip_array);
-    console.log(userIP);
+    ip_array.push("192.168.11.139");
+    // console.log(ip_array);
+    // console.log(userIP);
     var arr3 = ip_array.filter(function(el2) {
         return !!~el2.indexOf(userIP);
     });
