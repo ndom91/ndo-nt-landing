@@ -35,8 +35,6 @@
     <!-- hover css -->
     <link type="text/css" rel="stylesheet" href="assets/css/hover.min.css" />
 
-    <!-- newtelco js -->
-    <script src="assets/js/newtelco/boxEdit.js" type="text/javascript"></script>
     <script src="assets/js/newtelco/helper.js" type="text/javascript"></script>
 
     <script>
@@ -283,7 +281,8 @@
     </script>
     <!-- Google Analytics End -->
 
-</footer>
-</div>
+    <!-- newtelco js -->
+    <script src="assets/js/newtelco/boxEdit.js" type="text/javascript"></script>
 
+</footer>
 </html> 
