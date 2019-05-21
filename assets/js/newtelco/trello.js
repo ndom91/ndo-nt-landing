@@ -45,34 +45,34 @@ var boardSuccess = function(successMsg) {
     }
     })
     var cardLi = '';
-    for (i = 0; i < successMsg.length; i++) {
-    if (successMsg[i].idList != "5c67128447e0f057aba1e9ae") {
-        //   console.log(i);
-        var labelLi = '';
-        var cardImg = '';
-        var cardName = cards[i][0];
-        var shortUrl = cards[i][1];
-    
-        for(b = 0; b < successMsg[i].idMembers.length; b++) {
-        let userObj = trelloMembers.find(obj => {
-            return obj.id == successMsg[i].idMembers[b]
-        })
-        var username = userObj.username;
-        cardImg = cardImg + '<a target="_blank" href="https://trello.com/' + username + '"><img title="' + username + '" class="trelloIcons" src="assets/people/' + username + '.png"/></a>';
-        }
+    for (i = 0; i < cards.length; i++) {
+        if (successMsg[i].idList != "5c67128447e0f057aba1e9ae") {
+            //   console.log(i);
+            var labelLi = '';
+            var cardImg = '';
+            var cardName = cards[i][0];
+            var shortUrl = cards[i][1];
+        
+            for(b = 0; b < successMsg[i].idMembers.length; b++) {
+            let userObj = trelloMembers.find(obj => {
+                return obj.id == successMsg[i].idMembers[b]
+            })
+            var username = userObj.username;
+            cardImg = cardImg + '<a target="_blank" href="https://trello.com/' + username + '"><img title="' + username + '" class="trelloIcons" src="assets/people/' + username + '.png"/></a>';
+            }
 
-        for(c = 0; c < successMsg[i].idLabels.length; c++) {
-        let labelObj = trelloLbl.find(obj => {
-            return obj.id == successMsg[i].idLabels[c]
-        })
-        var labelName = labelObj.name;
-        var labelColor = labelObj.color;
-        labelLi = labelLi + '<span style="box-shadow: inset 0px 0px 20px -5px ' + labelColor + '" class="labelLabel">' + labelName + '</span>';
-        }
+            for(c = 0; c < successMsg[i].idLabels.length; c++) {
+            let labelObj = trelloLbl.find(obj => {
+                return obj.id == successMsg[i].idLabels[c]
+            })
+            var labelName = labelObj.name;
+            var labelColor = labelObj.color;
+            labelLi = labelLi + '<span style="box-shadow: inset 0px 0px 20px -5px ' + labelColor + '" class="labelLabel">' + labelName + '</span>';
+            }
 
-        cardLi = cardLi + '<li data-update="item' + [i] + '">' + cardImg + '<a target="_blank" href="' + shortUrl + '">' + cardName + '</a>' + labelLi + '</li><li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>';
-        $('#trelloUL').append('<li data-update="item' + [i] + '"></li>');
-    }
+            cardLi = cardLi + '<li data-update="item' + [i] + '">' + cardImg + '<a target="_blank" href="' + shortUrl + '">' + cardName + '</a>' + labelLi + '</li><li> <font style="color: #67B246; font-weight: 700; font-size: 22px">|</font> </li>';
+            $('#trelloUL').append('<li data-update="item' + [i] + '"></li>');
+        }
     }
     $('#trelloUL').webTicker('update', cardLi, 'swap', true, true);
 }
