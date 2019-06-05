@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background: #67B246;
+  /* background: #67B246; */
   font-size: 1em;
   line-height:1;
   margin: 0;
@@ -48,15 +48,18 @@ body:after {
 	position: fixed;
 	z-index: -1;
   width: 100%;
-  box-shadow:
-      inset 0px 121px 110px -100px #000,
-      inset 0px -121px 110px -100px #000;
-  background: url('../newtelcowallpaper.jpg') no-repeat center center fixed;
-  /* background: url('../newtelcowallpaper.jpg') no-repeat center center / cover fixed; */
+  /* background-image: linear-gradient( 63deg,  rgba(242,168,168,1) 2.9%, rgba(94,46,165,1) 102.1% ); */
+  background: linear-gradient(to bottom, #e09bd0, #3c1053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
 }
 
 a {
   text-decoration: none;
+}
+
+.fas {
+  color: #66ee66;
 }
 
 h1:first-child,
@@ -631,14 +634,15 @@ button {
   z-index: 1;
   float: left;
   margin-right: 10px;
-  content:url('../logo2.png');
+  content:url('../img/favicon_small.png');
+  background: url('../img/favicon_small.png') CENTER CENTER NO-REPEAT;
   display: block;
   font-family: 'ynh_ssowat';
   font-size: 4em;
   text-align: center;
-  border: 3px solid #fff;
+  box-shadow: 0 0 10px 1px #66ee66;
   width: 1em;
-  height: 1.1em;
+  height: 1em;
   border-radius: 10px;
   overflow: hidden;
           transition: all 0.1s ease;
@@ -665,7 +669,7 @@ button {
 }
 
 .user-container .user-mail {
-  color: #a6a6a6;
+  color: #fff;
   font-size: 0.9em;
   font-family: 'Rajdhani';
   display: block;
@@ -769,7 +773,7 @@ i.fa-angellist:hover {
   float: right;
 }
 
-.link-newtelco, .footera{
+.link-syzygy, .footera{
 /*
   position: relative;
   float: left;
@@ -787,7 +791,7 @@ i.fa-angellist:hover {
     transition: all .25s ease-in; */
 }
 
-.link-newtelco:hover, .footera:hover {
+.link-syzygy:hover, .footera:hover {
   background-position: 0 0;
   color:#333;
 }
@@ -886,7 +890,7 @@ i.fa-angellist:hover {
   }
 }
 @media screen and (max-width: 370px) {
-  .link-newtelco {
+  .link-syzygy {
     display:none !important;
   }
 }
@@ -994,7 +998,7 @@ i.fa-angellist:hover {
 .green1:focus:after,
 .green1:hover:before,
 .green1:focus:before {
-    background: #67b246!important;
+    background: #66ee66!important;
 }
 
 .green2 {
@@ -1004,7 +1008,7 @@ i.fa-angellist:hover {
 .green2:focus:after,
 .green2:hover:before,
 .green2:focus:before {
-    background: #528e38!important;
+    background: #66ee66!important;
 }
 
 .green3 {
@@ -1014,7 +1018,7 @@ i.fa-angellist:hover {
 .green3:focus:after,
 .green3:hover:before,
 .green3:focus:before {
-    background: #3d6a2a!important;
+    background: #66ee66!important;
 }
 
 .green4 {
@@ -1024,7 +1028,7 @@ i.fa-angellist:hover {
 .green4:focus:after,
 .green4:hover:before,
 .green4:focus:before {
-    background: #29471c!important;
+    background: #66ee66!important;
 }
 
 /* Following colors are not used yet */
