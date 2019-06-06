@@ -12,8 +12,10 @@ var jira = new JiraApi({
 });
 
 const issueNumber = 'FRDBWT-707'
+const userName = 'nico.domino'
 
-jira.findIssue(issueNumber)
+// jira.findIssue(issueNumber)
+jira.getUsersIssues(userName)
   .then(issue => {
     console.log(`Status: ${issue.fields.status.name}`);
   })

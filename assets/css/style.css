@@ -229,7 +229,7 @@ h3.subTitle {
    ========================================================================== */
 
 .apps {
-  max-width: 850px;
+  max-width: 670px;
   margin: 0 auto;
 }
 
@@ -633,8 +633,8 @@ button {
   z-index: 1;
   float: left;
   margin-right: 10px;
-  content:url('../img/favicon_small_white.png');
-  background: url('../img/favicon_small_white.png') CENTER CENTER NO-REPEAT;
+  content:url('/assets/img/favicon_small_white.png');
+  background: url('/assets/img/favicon_small_white.png') CENTER CENTER NO-REPEAT;
   display: block;
   font-family: 'ynh_ssowat';
   font-size: 4em;
@@ -1144,7 +1144,8 @@ margin-top: -0.6em;
   display: inline-block;
   padding: 0 1rem;
   font-size: 1rem;
-  color: white;
+  color: #66ee66;
+  font-weight: 600;
 }
 
 /* Pure CSS Ticker */
