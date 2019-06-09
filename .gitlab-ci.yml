@@ -25,6 +25,6 @@ deploy_dev:
     - echo "$DEPLOY_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync -rav -e 'ssh -p 2424' --delete /builds/ndomino/landing-syzygy/ ndo@91.211.88.25:/var/www/html/landing-syzygy-prod
-    - ssh -p 2424 ndo@91.211.88.25 'pm2 start /var/www/html/landing-syzygy-prod/pm2.json'
+    - rsync -rav -e 'ssh -p 2424 -i ~/.ssh/id_dsa' --delete /builds/ndomino/landing-syzygy/ ndo@91.211.88.25:/var/www/html/landing-syzygy-prod
+    - ssh -p 2424 -i ~/.ssh/id_dsa ndo@91.211.88.25 'pm2 start /var/www/html/landing-syzygy-prod/pm2.json'
 
