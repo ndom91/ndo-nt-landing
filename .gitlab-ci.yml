@@ -23,8 +23,9 @@ deploy_dev:
     - apk add --no-cache rsync openssh
     - mkdir -p ~/.ssh
     - echo "$DEPLOY_PRIVATE_KEY" >> ~/.ssh/id_dsa
+    - echo $DEPLOY_PRIVATE_KEY
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync -rav -e 'ssh -p 2424 -i ~/.ssh/id_dsa' --delete /builds/ndomino/landing-syzygy/ ndo@91.211.88.25:/var/www/html/landing-syzygy-prod
+    - rsync -rav -e 'ssh -v -p 2424 -i ~/.ssh/id_dsa' --delete /builds/ndomino/landing-syzygy/ ndo@91.211.88.25:/var/www/html/landing-syzygy-prod
     - ssh -p 2424 -i ~/.ssh/id_dsa ndo@91.211.88.25 'pm2 start /var/www/html/landing-syzygy-prod/pm2.json'
 
