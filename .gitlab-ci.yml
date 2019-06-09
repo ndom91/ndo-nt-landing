@@ -13,7 +13,7 @@ deploy_dev:
   stage: deploy
   script:
     # SETUP CONFIG FILE
-    - cp /builds/ndomino/landing-syzygy/.env /builds/ndomino/landing-syzygy/.env
+    - cp /builds/ndomino/landing-syzygy/.env.template /builds/ndomino/landing-syzygy/.env
     - sed -i "s/PORT=/PORT=7557/" .env
     - sed -i "s/JIRA_URL=/JIRA_URL=\"$JIRA_URL\"/" /builds/ndomino/landing-syzygy/.env
     - sed -i "s/JIRA_USER=/JIRA_USER=\"$JIRA_USER\"/" /builds/ndomino/landing-syzygy/.env
