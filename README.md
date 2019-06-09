@@ -8,19 +8,28 @@ Default page for **ndomino** @ **Syzygy**
 
 - [x] Grid based favorites launcher  
 - [x] Editable URL block  
-- [ ] Integrated Jira Issues Ticker   
+- [x] Integrated Jira Issues Ticker   
+- [x] Portable config file  
+
+## Requirements  
+
+- Jira Account  
+- Server that can run `node.js` 
+<sub>either locally or remote for more permanent deployements</sub>
 
 ## Installation
 
 1. Clone this Repo `git clone https://git.newtelco.dev/ndomino/landing-syzygy` 
 2. Install the dependencies `npm install` 
-3. Run the server 
-4. **Development**  
-4a. Run: `npm run start:dev`  
-4b. Visit: `localhost:7557`  
-5. **Production**  
-5a. Run: `if [ ! -f /usr/local/bin/pm2 ] ; then npm i -g pm2 ; fi && pm2 start server.js --name "Syzygy Landing"`  
-5b. Use [**nginx**](https://nginx.org/en/docs/) to reverse proxy out `localhost:7557`  
+3. Make a copy of `.env.template` like so `cp .env.template .env`
+4. Add your Jira details, etc. to your new `.env`
+5. Run the server 
+6. **Development**  
+6a. Run: `npm run start:dev`  
+6b. Visit: `localhost:7557`  
+7. **Production**  
+7a. Run: `if [ ! -f /usr/local/bin/pm2 ] ; then npm i -g pm2 ; fi && pm2 start server.js --name "Syzygy Landing"`  
+7b. Use [**nginx**](https://nginx.org/en/docs/) to reverse proxy out `localhost:7557`  
 
 ## Contributing
 
