@@ -28,40 +28,71 @@ app.post('/jira', (req, res) => {
     })
 
     const userName = 'nico.domino'
-    let issueDesc = []
+    // let issueDesc = []
     let issuePromises = []
+    let issueKeyResp = []
 
-    jiraGetIssue = (issue) => {
-        let issueDetail = jira.findIssue(issue)
-        issueDetail.then((resp) => {
-            return new Promise((resolve) => {
-                console.log(resp.fields)
-                issDesc = issue + ' - ' + resp.fields.summary
-                // return res.fields.description
-                console.log(JSON.stringify(issDesc))
-                const issResponse = JSON.stringify(issDesc)
-                return res.status(202).send(issResponse)
+    jiraGetIssue = (issueKeys) => {
+
+        issueKeyResp = issueKeys.forEach(key => {
+            let issueDetail = jira.findIssue(key)
+
+            issueDetail.then((resp) => {
+                return new Promise((resolve) => {
+                    console.log(resp.fields)
+                    issDesc = issue + ' - ' + resp.fields.summary
+                    // return issDesc
+                    // return res.fields.description
+                    console.log(JSON.stringify(issDesc))
+                    // const issResponse = JSON.stringify(issDesc)
+                    // return res.status(202).send(issResponse)
+
+                })
             })
+            // .then(function(data) {
+            //     return Promise.all(issues2.map(data))
+            // })
         })
+
     }
+
+    // issueKeyResp.all (?)
+    let results2 = ''
 
     jira.getUsersIssues(userName)
     .then(issue => {
+        // atlassian API response
+        // obj containing ALL issues info
         const issueObj = issue.issues
         let issueArr = []
 
+        // pushing all issue keys from the obj to an array of keys
         issueObj.forEach(iss => {
             issueArr.push(iss.key)
         })
 
-        for(i = 0; i < issueArr.length; i++) {
-            issuePromises.push(jiraGetIssue(issueArr[i]))
-        }
+        // looping over issue key array to get
+        // the issue details based on issue id (key)
+        console.dir(issueArr)
+        jiraGetIssue(issueArr)
+        // for(i = 0; i < issueArr.length; i++) {
+        //     issuePromises.forEach(jiraGetIssue(issueArr[i]))
+        // }
+    })
+    .then(function(data){
+        return Promise.all(results2.map(data))
     })
     .catch(err => {
         console.error(err)
         return res.status(403).send(err)
     })
+
+    let results = Promise.all(issuePromises) 
+    results.then(data => 
+        console.log(data)
+    )
+
+    console.log('r2: ' + results2)
 
     console.log('iP', issuePromises)
     Promise.all(issuePromises)
