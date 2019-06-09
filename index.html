@@ -62,8 +62,10 @@
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        $('.ticker').append(`<div class="ticker__item">${data}</div>`)
+        let issues = data.issues
+        Object.keys(issues).forEach(issue => {
+            $('.ticker').append(`<div class="ticker__item">${issue} - ${issues[issue]}</div>`)
+        })
     })
     .catch(error => console.error(error))
 
