@@ -15,9 +15,9 @@ deploy_dev:
     # SETUP CONFIG FILE
     - cp /builds/ndomino/landing-syzygy/.env.template /builds/ndomino/landing-syzygy/.env
     - sed -i "s/PORT=/PORT=7557/" .env
-    - sed -i "s/JIRA_URL=/JIRA_URL=\"$JIRA_URL\"/" /builds/ndomino/landing-syzygy/.env
-    - sed -i "s/JIRA_USER=/JIRA_USER=\"$JIRA_USER\"/" /builds/ndomino/landing-syzygy/.env
-    - sed -i "s/JIRA_PW=/JIRA_PW=\"$JIRA_PW\"/" /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/JIRA_URL=/JIRA_URL=$JIRA_URL/" /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/JIRA_USER=/JIRA_USER=$JIRA_USER/" /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/JIRA_PW=/JIRA_PW=$JIRA_PW/" /builds/ndomino/landing-syzygy/.env
     - echo "$PM2_DEV" >> /builds/ndomino/landing-syzygy/pm2.json
     # PUSH
     - apk add --no-cache rsync openssh
