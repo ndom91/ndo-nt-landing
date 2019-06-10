@@ -47,12 +47,23 @@
     <script type="text/javascript" src="assets/js/OverlayScrollbars.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/OverlayScrollbars.min.css">
 
+    <script>
+        // inline webticker
+        !function(h){function f(i){var t=0;return i.children("li").each(function(){t+=h(this).outerWidth(!0)}),t}function d(i){return Math.max.apply(Math,i.children().map(function(){return h(this).width()}).get())}function n(i){var t=i.data("settings")||{direction:"left",speed:15},e=i.children().first(),s=Math.abs(-i.css(t.direction).replace("px","").replace("auto","0")-e.outerWidth(!0)),n=1e3*s/t.speed,r={};return r[t.direction]=i.css(t.direction).replace("px","").replace("auto","0")-s,{css:r,time:n}}function r(i){var t=i.data("settings")||{direction:"left"};i.css("transition-duration","0s").css(t.direction,"0");var e=i.children().first();e.hasClass("webticker-init")?e.remove():i.children().last().after(e)}function c(i,t){var e=i.data("settings")||{direction:"left"};void 0===t&&(t=!1),t&&r(i);var s=n(i);i.animate(s.css,s.time,"linear",function(){i.css(e.direction,"0"),c(i,!0)})}function l(i,t){void 0===t&&(t=!1),t&&r(i);var e=n(i),s=e.time/1e3;s+="s",i.css(e.css).css("transition-duration",s)}function o(i,t,e){var s=[];h.get(i,function(i){h(i).find("item").each(function(){var i=h(this),t=i.find("title").text(),e=i.find("link").text();s+='<li><a href="'+e+'"">'+t+"</a></li>"}),e.webTicker("update",s,t)})}function p(i,t){if(i.children("li").length<1)return window.console,!1;var e=i.data("settings");e.duplicateLoops=e.duplicateLoops||0,i.width("auto");var s=0;i.children("li").each(function(){s+=h(this).outerWidth(!0)});var n,r=i.find("li:first").height();if(e.duplicate){n=d(i);for(var a=0;s-n<i.parent().width()||1===i.children().length||a<e.duplicateLoops;){var c=i.children().clone();i.append(c),s=0,s=f(i),n=d(i),a++}e.duplicateLoops=a}else{var l=i.parent().width()-s;l+=i.find("li:first").width(),0<i.find(".ticker-spacer").length?i.find(".ticker-spacer").width(l):i.append('<li class="ticker-spacer" style="float: '+e.direction+";width:"+l+"px;height:"+r+'px;"></li>')}e.startEmpty&&t&&i.prepend('<li class="webticker-init" style="float: '+e.direction+";width:"+i.parent().width()+"px;height:"+r+'px;"></li>'),s=0,s=f(i),i.width(s+200);var o=0;for(o=f(i);o>=i.width();)i.width(i.width()+200),o=0,o=f(i);return!0}var u=function(){var i=document.createElement("p").style,t=["ms","O","Moz","Webkit"];if(""===i.transition)return!0;for(;t.length;)if(t.pop()+"Transition"in i)return!0;return!1}(),t={init:function(a){return a=jQuery.extend({speed:15,direction:"left",moving:!0,startEmpty:!0,duplicate:!1,rssurl:!1,hoverpause:!0,rssfrequency:0,updatetype:"reset",transition:"linear",height:"30px",maskleft:"",maskright:"",maskwidth:0},a),this.each(function(){jQuery(this).data("settings",a);var t=jQuery(this),i=t.wrap('<div class="mask"></div>');i.after('<span class="tickeroverlay-left">&nbsp;</span><span class="tickeroverlay-right">&nbsp;</span>');var e,s=t.parent().wrap('<div class="tickercontainer"></div>');if(h(window).resize(function(){clearTimeout(e),e=setTimeout(function(){console.log("window was resized"),p(t,!1)},500)}),t.children("li").css("white-space","nowrap"),t.children("li").css("float",a.direction),t.children("li").css("padding","0 7px"),t.children("li").css("line-height",a.height),i.css("position","relative"),i.css("overflow","hidden"),t.closest(".tickercontainer").css("height",a.height),t.closest(".tickercontainer").css("overflow","hidden"),t.css("float",a.direction),t.css("position","relative"),t.css("font","bold 10px Verdana"),t.css("list-style-type","none"),t.css("margin","0"),t.css("padding","0"),""!==a.maskleft&&""!==a.maskright){var n='url("'+a.maskleft+'")';s.find(".tickeroverlay-left").css("background-image",n),s.find(".tickeroverlay-left").css("display","block"),s.find(".tickeroverlay-left").css("pointer-events","none"),s.find(".tickeroverlay-left").css("position","absolute"),s.find(".tickeroverlay-left").css("z-index","30"),s.find(".tickeroverlay-left").css("height",a.height),s.find(".tickeroverlay-left").css("width",a.maskwidth),s.find(".tickeroverlay-left").css("top","0"),s.find(".tickeroverlay-left").css("left","-2px"),n='url("'+a.maskright+'")',s.find(".tickeroverlay-right").css("background-image",n),s.find(".tickeroverlay-right").css("display","block"),s.find(".tickeroverlay-right").css("pointer-events","none"),s.find(".tickeroverlay-right").css("position","absolute"),s.find(".tickeroverlay-right").css("z-index","30"),s.find(".tickeroverlay-right").css("height",a.height),s.find(".tickeroverlay-right").css("width",a.maskwidth),s.find(".tickeroverlay-right").css("top","0"),s.find(".tickeroverlay-right").css("right","-2px")}else s.find(".tickeroverlay-left").css("display","none"),s.find(".tickeroverlay-right").css("display","none");t.children("li").last().addClass("last");var r=p(t,!0);a.rssurl&&(o(a.rssurl,a.type,t),0<a.rssfrequency&&window.setInterval(function(){o(a.rssurl,a.type,t)},1e3*a.rssfrequency*60)),u?(t.css("transition-timing-function",a.transition),t.css("transition-duration","0s").css(a.direction,"0"),r&&l(t,!1),t.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend",function(i){return!!t.is(i.target)&&void l(h(this),!0)})):r&&c(h(this)),a.hoverpause&&t.hover(function(){if(u){var i=h(this).css(a.direction);h(this).css("transition-duration","0s").css(a.direction,i)}else jQuery(this).stop()},function(){jQuery(this).data("settings").moving&&(u?l(h(this),!1):c(t))})})},stop:function(){var t=h(this).data("settings");if(t.moving)return t.moving=!1,this.each(function(){if(u){var i=h(this).css(t.direction);h(this).css("transition-duration","0s").css(t.direction,i)}else h(this).stop()})},cont:function(){var i=h(this).data("settings");if(!i.moving)return i.moving=!0,this.each(function(){u?l(h(this),!1):c(h(this))})},transition:function(i){var t=h(this);u&&t.css("transition-timing-function",i)},update:function(i,t,e,s){t=t||"reset",void 0===e&&(e=!0),void 0===s&&(s=!1),"string"==typeof i&&(i=h(i));var n=h(this);n.webTicker("stop");var r=h(this).data("settings");if("reset"===t)n.html(i),p(n,!0);else if("swap"===t){var a,c,l;if(window.console,n.children("li").length<1)n.html(i),n.css(r.direction,"0"),p(n,!0);else if(!0===r.duplicate){n.children("li").addClass("old");for(var o=i.length-1;0<=o;o--)a=h(i[o]).data("update"),n.find('[data-update="'+a+'"]').length<1?e&&(0===n.find(".ticker-spacer:first-child").length&&0<n.find(".ticker-spacer").length?n.children("li.ticker-spacer").before(i[o]):(c=h(i[o]),o===i.length-1&&c.addClass("last"),n.find("last").after(c),n.find("last").removeClass("last"))):n.find('[data-update="'+a+'"]').replaceWith(i[o]);n.children("li.webticker-init, li.ticker-spacer").removeClass("old"),s&&n.children("li").remove(".old"),l=0,l=f(n),n.width(l+200),n.find("li.webticker-init").length<1&&(r.startEmpty=!1),n.html(i),n.children("li").css("white-space","nowrap"),n.children("li").css("float",r.direction),n.children("li").css("padding","0 7px"),n.children("li").css("line-height",r.height),p(n,!0)}else{n.children("li").addClass("old");for(var d=0;d<i.length;d++)a=h(i[d]).data("update"),n.find('[data-update="'+a+'"]').length<1?e&&(0===n.find(".ticker-spacer:first-child").length&&0<n.find(".ticker-spacer").length?n.children("li.ticker-spacer").before(i[d]):(c=h(i[d]),d===i.length-1&&c.addClass("last"),n.find(".old.last").after(c),n.find(".old.last").removeClass("last"))):n.find('[data-update="'+a+'"]').replaceWith(i[d]);n.children("li.webticker-init, li.ticker-spacer").removeClass("old"),n.children("li").css("white-space","nowrap"),n.children("li").css("float",r.direction),n.children("li").css("padding","0 7px"),n.children("li").css("line-height",r.height),s&&n.children("li").remove(".old"),l=0,l=f(n),n.width(l+200)}}n.webTicker("cont")}};h.fn.webTicker=function(i){return t[i]?t[i].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof i&&i?void h.error("Method "+i+" does not exist on jQuery.webTicker"):t.init.apply(this,arguments)}}(jQuery);
+    </script>
 </head>
 
 <script>
-   var fname = '';
-
    $(document).ready(function() {
+
+    loadEdits();
+
+    OverlayScrollbars(document.querySelectorAll("body"), {
+        className: "os-theme-light",
+        resize: "vertical",
+        sizeAutoCapable: false
+    });
+
     fetch('/jira', {
         method: 'POST',
         credentials: 'include',
@@ -63,15 +74,24 @@
     .then(response => response.json())
     .then(data => {
         let issues = data.issues
+
+        // append li for each issue
         Object.keys(issues).forEach(issue => {
-            $('.ticker').append(`<div class="ticker__item"><a href="https://task.syzygy.de/browse/${issue}">${issue}</a> - ${issues[issue]}</div>`)
+            $('#jiraTicker').append(`<li><a href="https://task.syzygy.de/browse/${issue}">${issue}</a> - ${issues[issue]}</li>`)
         })
+
+        // initialize Ticker
+        $('#jiraTicker').webTicker({
+            height: '30px',
+            duplicate: true,
+            rssfrequency: 0,
+            startEmpty: false,
+            hoverpause: false
+        });
     })
     .catch(error => console.error(error))
 
   });
-  
-
 </script>
 
 <body id="body1">
@@ -117,11 +137,15 @@
                     <a class="link-syzygy hvr-sweep-to-top" href="https://syzygy.de" target="_blank">syzygy.de</a>
                 </div>
                 <div class="footer2">
+                        <ul id="jiraTicker">
+                        </ul>
+                </div>
+                <!-- <div class="footer2">
                     <div class="ticker-wrap">
                         <div class="ticker">
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="footer3">
                     <!-- <span class="love">&hearts;</span>-->
                     <div class="footerawrapper"><a target="_blank" class="footera hvr-sweep-to-top" href="https://github.com/ndom91">ndom91</a> &copy;</div>
@@ -151,53 +175,6 @@
     <button type="button" class="mdl-snackbar__action"></button>
 </div>
 <footer>
-    <script>
-        $(document).ready(function() {
-
-            loadEdits();
-
-            // initialize Ticker(s)
-            // $("#ntnews-ticket").webTicker({
-            //     height: '15px',
-            //     duplicate: true,
-            //     rssfrequency: 0,
-            //     startEmpty: false,
-            //     hoverpause: true
-            // });
-            // $("#stop-newsticker2").click(function() {
-            //     $("#ntnews-ticket").webTicker('stop');
-            // });
-            // $("#continue-newsticker2").click(function() {
-            //     $("#ntnews-ticket").webTicker('cont');
-            // });
-
-
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // initialize custom scrollbars
-            OverlayScrollbars(document.querySelectorAll("body"), {
-                className: "os-theme-light",
-                resize: "vertical",
-                sizeAutoCapable: false
-            });
-        });
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127102919-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-127102919-1');
-
-    </script>
-    <!-- Google Analytics End -->
 
     <!-- newtelco js -->
     <script src="assets/js/boxEdit.js" type="text/javascript"></script>

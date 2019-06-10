@@ -742,7 +742,7 @@ margin-top: -0.6em;
   .footer nav {
     margin: 0 1em;
     padding: 0.75em;
-    border-top: 1px solid #cccccc;
+    /* border-top: 1px solid #cccccc; */
     font-size: 0.9em;
   }
 
@@ -750,7 +750,7 @@ margin-top: -0.6em;
     display: inline-block;
     font-size: 1.2rem;
     vertical-align: top;
-    color: #cccccc;
+    color: #66ee66;
     border-bottom: 1px dotted #666;
   }
   .footer a:before {
@@ -773,24 +773,6 @@ margin-top: -0.6em;
     float: right;
   }
 
-  .link-syzygy, .footera{
-  /*
-    position: relative;
-    float: left;
-
-    margin: 0 auto;
-  color:white;
-    display: block;
-    background-image: linear-gradient(to left,
-      transparent,
-      transparent 50%,
-      #66EE66 50%,
-      #66EE66);
-    background-position: 100% 0;
-      background-size: 200% 100%;
-      transition: all .25s ease-in; */
-  }
-
   .link-syzygy:hover, .footera:hover {
     background-position: 0 0;
     color:#333;
@@ -801,7 +783,6 @@ margin-top: -0.6em;
     width: 90px;
     float: left;
     margin-top: 5px;
-    font-size: 
   }
   .footer2 {
     display: inline-block;
@@ -815,69 +796,30 @@ margin-top: -0.6em;
     text-align: right;
   }
 
-  #ntnews-ticket {
+  #jiraTicker {
     font-family: 'Rajdhani' !important;
     font-size: 14px !important;
     font-weight: 200 !important;
     color: #fff;
-    opacity: 0.7;
+    /* opacity: 0.7; */
+    margin-top: 5px;
   }
 
-  .labelLabel {
-    /* margin: 2px; */
-    margin-left: 4px;
-    /* margin-bottom: 3px; */
-    vertical-align: top;
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 5px;
-    padding: 0 3px;
-    /* box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2);
-    opacity: 0.2; */
-  }
-  /* TODO Change display to activate */
-
-  .trelloWrapper {
-    width: 98%;
-    margin: 0 auto;
-    display: inline-block;
-    /* display: none; */
+  #jiraTicker > li {
+    display: inline;
+    font-size: 1.0rem !important;
+    margin: 0 5px;
   }
 
-  .trelloHeader {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Rajdhani';
-    width:55px;
-    margin-bottom: 4px;
-    margin-left: 25px;
-  }  
-
-  .trelloHeader + .tickercontainer {
-    display: inline-block !important;
-    width: 89%;
-    margin-left: 5px;
-    vertical-align: middle;
+  #jiraTicker > li > a {
+    font-size: 1.0rem !important;
+    border-bottom: none !important;
   }
 
-  .trelloIcons {
-    margin-right: 5px;
-    max-width: 16px;
-    max-height: 16px;
-    vertical-align: middle;
-    border: 1px solid #fff;
-    border-radius: 50%;
+  #jiraTicker > li > a:hover {
+    font-weight: 500;
+    color: #66EE66;
   }
-
-#trelloUL {
-  font-family: 'Rajdhani' !important;
-  font-size: 14px !important;
-  font-weight: 200 !important;
-  color: #fff;
-  opacity: 0.7;
-  display: inline-block;
-}
-
 @media screen and (max-width: 480px) {
   .footer a {
     display: inline-block;
@@ -1007,7 +949,7 @@ margin-top: -0.6em;
 
 .green2 {
     /* background: #828282!important; */
-    background: #e91e6345 !important;
+    background: #0000008f !important;
 }
 .green2:hover:after,
 .green2:focus:after,
