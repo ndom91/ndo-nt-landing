@@ -1,0 +1,31 @@
+build site:
+  image: node:11
+  stage: build
+  script:
+    - npm install --progress=false
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - node_modules
+
+deploy_dev:
+  image: alpine:latest
+  stage: deploy
+  script:
+    # SETUP CONFIG FILE
+    - cp /builds/ndomino/landing-syzygy/.env.template /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/PORT=/PORT=7557/" .env
+    - sed -i "s/JIRA_URL=/JIRA_URL=\"$JIRA_URL\"/" /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/JIRA_USER=/JIRA_USER=\"$JIRA_USER\"/" /builds/ndomino/landing-syzygy/.env
+    - sed -i "s/JIRA_PW=/JIRA_PW=\"$JIRA_PW\"/" /builds/ndomino/landing-syzygy/.env
+    - echo "$PM2_DEV" >> /builds/ndomino/landing-syzygy/pm2.json
+    # PUSH
+    - apk add --no-cache rsync openssh
+    - mkdir -p ~/.ssh
+    - echo "$DEPLOY_PRIVATE_KEY" >> ~/.ssh/id_dsa
+    - echo $DEPLOY_PRIVATE_KEY
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - rsync -rav -e 'ssh -vv -p 2424 -i ~/.ssh/id_dsa' --delete /builds/ndomino/landing-syzygy/ ndo@91.211.88.25:/var/www/html/landing-syzygy-prod
+    - ssh -p 2424 -i ~/.ssh/id_dsa ndo@91.211.88.25 'pm2 start /var/www/html/landing-syzygy-prod/pm2.json'
+
