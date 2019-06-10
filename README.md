@@ -10,6 +10,7 @@ Default page for **ndomino** @ **Syzygy**
 - [x] Editable URL block  
 - [x] Integrated Jira Issues Ticker   
 - [x] Portable config file  
+- [x] Hashbang search for multiple providers
 
 ## Requirements  
 
