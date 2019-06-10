@@ -37,7 +37,10 @@
 
     <!-- hover css -->
     <link type="text/css" rel="stylesheet" href="assets/css/hover.min.css" />
-
+ 
+    <!-- ndo js -->
+    <script type="text/javascript" src="assets/js/search.js"></script>
+    <link type="text/css" rel="stylesheet" href="assets/css/style_search.css" />
     <script src="assets/js/helper.js" type="text/javascript"></script>
 
     <!-- overlay scrollbars -->
@@ -53,6 +56,7 @@
 <script>
    $(document).ready(function() {
 
+    initSearch();
     loadEdits();
 
     OverlayScrollbars(document.querySelectorAll("body"), {
@@ -96,10 +100,18 @@
     <div class="overlay">
         <div class="ynh-wrapper user">
             <ul class="user-menu">
-                <li><a href="">
-                    <i class="fnameWelcome"></i>
-                    <i class="fas fa-code"></i>
-                </a></li>
+                <li>
+                    <div class="container">
+                        <div class="container container-search" id="searchContainer">
+                            <i class="fas fa-search"></i>
+                            <input tabindex="1" type="text" id="searchBar"
+                            onkeydown="javascript:handleQuery(event,this.value);">
+                        </div>
+                        <div class="container container-help" id="searchHelp">
+                            <ul class="help-list" id="searchHelpMenu"></ul>
+                        </div>
+                    </div>
+                </li>
             </ul>
 
             <a class="user-container user-container-info" href="https://syzygy.ndo.dev">
