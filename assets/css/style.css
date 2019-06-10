@@ -653,7 +653,8 @@ button {
 
 .user-container .user-username {
   font-size: 1.5em;
-  margin: 0;
+  margin-top: -3px;
+  margin-bottom: 0;
 }
 
 .user-container .user-username:hover {
@@ -664,8 +665,8 @@ button {
   font-size: 1em;
   font-family: 'Rajdhani';
   display: block;
-margin-top: -0.6em;
-  }
+  margin-top: -0.3em;
+}
 
   .user-container .user-mail {
     color: #fff;
