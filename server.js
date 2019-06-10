@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 
 const app = express()
-dotenv.config()
+const config = dotenv.config({ path: __dirname + '/.env' })
 
 app.use(express.static(__dirname + '/'))
 app.use(helmet())
