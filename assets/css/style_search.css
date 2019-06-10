@@ -51,7 +51,7 @@
   outline: none;
   transition: 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
   border-color: #66ee66;
-  width: 250px;
+  width: 280px;
 }
 
 #searchBar,

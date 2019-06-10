@@ -22,8 +22,8 @@ var searchSources = [
   ["ud",       "http://www.urbandictionary.com/define.php?term={Q}",     "Urban Dictionary"],
   ["wp",       "http://en.wikipedia.org/w/index.php?search={Q}",         "Wikipedia"],
   ["yt",       "https://www.youtube.com/results?search_query={Q}",       "YouTube"],
-  ["c",        'https://wiki.syzygy.de/dosearchsite.action?cql=siteSearch+~+"{Q}"',       "Syz Conf"],
-  ["j",        "https://task.syzygy.de/browse/FRDBWT-572?jql=text%20~%20%22{Q}%22",       "Syz Jira"],
+  ["c",        'https://wiki.syzygy.de/dosearchsite.action?cql=siteSearch+~+"{Q}"',       "Syzygy Confluence"],
+  ["j",        "https://task.syzygy.de/browse/FRDBWT-572?jql=text%20~%20%22{Q}%22",       "Syzygy Jira"],
 ];
  
 var svgGoogle = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"/></svg>";
@@ -36,14 +36,11 @@ var svgGoogle = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\
 function initSearch() {
   initSearchBar();
   buildHelp();
-  // $('#body').css('opacity', 1);
-  // $('#mainContainer').css('opacity', 1);
 }
 
 function initSearchBar() {
   if (searchSources[ssi] !== undefined)
-    //searchInput.placeholder = searchSources[ssi][2];
-    $('#searchBar').attr("placeholder", "Search..");
+    $('#searchBar').attr("placeholder", "Search...");
   else {
     ssi = 0;
     $('#searchBar').attr("placeholder", "Do you know what you're doing?");
@@ -58,17 +55,9 @@ function initSearchBar() {
 function buildHelp() {
   var newHelp = "";
 
-  // console.log(searchSources[0][0]);
-  // console.log(searchSources[0][2]);
-
   for (var i = 1; i < searchSources.length; i++) {
-    // console.log(searchSources[i][0]);
-    // console.log(searchSources[i][2]);
-
-    //Will add google logo support when I'm not lazy
     newHelp+= "<li><span>" + searchSources[i][0] + "</span> "+ searchSources[i][2] + "</li>";
   }
-  //console.log(newHelp);
   $('#searchHelpMenu').append(newHelp);
 }
 
@@ -124,7 +113,6 @@ function handleQuery(event, query) {
       } else {
         var urlToOpen2 = searchSources[ssi][1].replace("{Q}", encodeURIComponent(query));
         window.open(urlToOpen2, '_blank');
-        // window.location = searchSources[ssi][1].replace("{Q}", encodeURIComponent(query));
       }
     }
   }
