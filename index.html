@@ -64,7 +64,7 @@
     .then(data => {
         let issues = data.issues
         Object.keys(issues).forEach(issue => {
-            $('.ticker').append(`<div class="ticker__item">${issue} - ${issues[issue]}</div>`)
+            $('.ticker').append(`<div class="ticker__item"><a href="https://task.syzygy.de/browse/${issue}">${issue}</a> - ${issues[issue]}</div>`)
         })
     })
     .catch(error => console.error(error))

@@ -48,6 +48,7 @@ app.post('/jira', (req, res) => {
 
         omgzResults.then(data => {
             for(i = 0; i < data.length; i++) {
+                console.log(data[i])
                 const issueKey = data[i].key
                 const issueSummary = data[i].fields.summary
 
