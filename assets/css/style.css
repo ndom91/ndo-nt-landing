@@ -50,8 +50,14 @@ body:after {
   width: 100%;
   /* background-image: linear-gradient( 63deg,  rgba(242,168,168,1) 2.9%, rgba(94,46,165,1) 102.1% ); */
   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
 
-  
+.lightBody:after {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.darkBody:after {
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }
 
 a {
@@ -1092,3 +1098,60 @@ button {
 }
 
 /* Pure CSS Ticker */
+
+/* CSS Toggle */ 
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+  visibility: hidden;
+  margin-top: 43px;
+  position: relative;
+  margin-right: 20px;
+  padding-right: 55px;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 45px;
+	height: 20px;
+	background: rgba(128, 128, 128, 0.5);
+	display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 20px;
+	height: 20px;
+	background: #66ee66;
+	border-radius: 9px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: rgb(87, 87, 87);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-75%);
+}
+
+label:active:after {
+	width: 10px;
+}
+
+/* body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+} */
+
+/* CSS Toggle */ 
