@@ -1126,7 +1126,7 @@ label:after {
 	content: '';
 	position: absolute;
 	top: 0px;
-	left: 0px;
+	left: -1px;
 	width: 20px;
 	height: 20px;
 	background: #66ee66;
