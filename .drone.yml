@@ -38,7 +38,7 @@ pipeline:
     port: 2424
     username: ndo
     target: /var/www/html/landing-syzygy-prod/
-    ssh_key: 
+    key: 
       - from_secret: DEPLOY_PRIVATE_KEY
     source:
       - "*.js"
