@@ -38,10 +38,8 @@ pipeline:
     port: 2424
     username: ndo
     target: /var/www/html/landing-syzygy-prod/
-    key: scp_key
-    secrets:
-      - source: DEPLOY_PRIVATE_KEY
-        target: scp_key
+    ssh_key: 
+      - from_secret: DEPLOY_PRIVATE_KEY
     source:
       - "*.js"
       - pm2.json
