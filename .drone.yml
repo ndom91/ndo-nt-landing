@@ -48,9 +48,9 @@ pipeline:
     secrets: [ DEPLOY_PRIVATE_KEY ]
     source:
       - "*.js"
-      - process.json
+      - pm2.json
       - node_modules
-      - Dockerfile
+      - assets
 #    when:
 #      branch: master
 
