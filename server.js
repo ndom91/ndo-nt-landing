@@ -48,6 +48,10 @@ app.post('/jira', (req, res) => {
 
         omgzResults.then(data => {
             for(i = 0; i < data.length; i++) {
+                const status = data[i].fields.status.id
+                if(status == 6){
+                    return
+                }
                 const issueKey = data[i].key
                 const issueSummary = data[i].fields.summary
 
