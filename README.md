@@ -12,6 +12,16 @@ Default page for **ndomino** @ **Syzygy**
 - [x] Portable config file  
 - [x] Hashbang search for multiple providers
 
+Search Providers Hashbangs include:
+
+- !g - google
+- !im - google images
+- !imdb - imdb
+- !wp - wikipedia
+- !yt - youtube
+- !c - syzygy confluence
+- !j - syzygy jira
+
 ## Requirements  
 
 - Jira Account  
