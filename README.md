@@ -4,6 +4,8 @@
 
 Default page for **ndomino** @ **Syzygy**
 
+![homepage screenshot](https://imgur.com/cCFE4VM.png)
+
 ## Features
 
 - [x] Grid based favorites launcher  
@@ -14,13 +16,13 @@ Default page for **ndomino** @ **Syzygy**
 
 Search Providers Hashbangs include:
 
-- !g - google
-- !im - google images
-- !imdb - imdb
-- !wp - wikipedia
-- !yt - youtube
-- !c - syzygy confluence
-- !j - syzygy jira
+- **!g** - google
+- **!im** - google images
+- **!imdb** - imdb
+- **!wp** - wikipedia
+- **!yt** - youtube
+- **!c** - syzygy confluence
+- **!j** - syzygy jira
 
 ## Requirements  
 
