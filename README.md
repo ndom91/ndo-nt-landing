@@ -26,9 +26,7 @@ Search Providers Hashbangs include:
 
 ## Requirements  
 
-- Jira Account  
-- Server that can run `node.js` 
-<sub>either locally or remote for more permanent deployements</sub>
+- Jira Account for open ticket ticker  
 
 ## Installation
 
@@ -50,9 +48,6 @@ Search Providers Hashbangs include:
 2. Install Dependencies `npm install`  
 3. Create a branch `git checkout -b [BRANCH_NAME]`  
 4. Run dev server `npm run start:dev` available @ [localhost:7557](http://localhost:7557)  
-    **Do work!** :computer: :briefcase: :office: :money_with_wings: :tada:   
-6. Push your changes back up `git commit -am "[COMMIT_MESSAGE]"` & `git push origin [BRANCH_NAME]`  
-7. Make a merge/pull request here on [**Gitlab**](https://git.newtelco.dev/ndomino/landing-syzygy/merge_requests/new)!  
 
 ---  
 
