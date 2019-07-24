@@ -27,7 +27,7 @@ app.post('/jira', (req, res) => {
     strictSSL: true
     })
 
-    issueDeetFn = (key) => {
+    getIssueDetails = (key) => {
         let issueDetail = jira.findIssue(key)
         return issueDetail
     }
@@ -39,23 +39,24 @@ app.post('/jira', (req, res) => {
         let outputObj2 = {}
         let issueArr = []
 
-        issueObj.forEach(iss => {
-            issueArr.push(iss.key)
+        issueObj.forEach(issue => {
+            issueArr.push(issue.key)
         })
 
-        let omgzPromises = issueArr.map(issueDeetFn)
+        let omgzPromises = issueArr.map(getIssueDetails)
         let omgzResults = Promise.all(omgzPromises)
 
         omgzResults.then(data => {
-            for(i = 0; i < data.length; i++) {
-                const status = data[i].fields.status.id
-                if(status == 6){
-                    return
+            for (const key of Object.keys(data)) {
+                const status = data[key].fields.status.id
+                const name = data[key].fields.status.name
+                const description = data[key].fields.issuetype.description
+                console.log(status, name, description)
+                if(status !== '6' && status !== '10001'){
+                    const issueKey = data[key].key
+                    const issueSummary = data[key].fields.summary
+                    outputObj[issueKey] = issueSummary
                 }
-                const issueKey = data[i].key
-                const issueSummary = data[i].fields.summary
-
-                outputObj[issueKey] = issueSummary
             }
             outputObj2['issues'] = outputObj
 
