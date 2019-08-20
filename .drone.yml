@@ -6,45 +6,21 @@ pipeline:
       - node -v
       - npm i
 
-#  testing:
-#    image: node:8.6.0
-#    group: testing
-#    commands:
-#      - yarn run test
-
-#  lint:
-#    image: node:8.6.0
-#    group: testing
-#    commands:
-#      - yarn run lint
-
-#  publish:
-#    image: plugins/docker
-#    repo: appleboy/k8s-node-demo
-#    dockerfile: Dockerfile
-#   secrets:
-#      - source: demo_username
-#        target: docker_username
-#      - source: demo_password
-#        target: docker_password
-#    tags: [ latest, '${DRONE_TAG}' ]
-#    when:
-#      event: tag
-
   scp:
     image: appleboy/drone-scp
-    host:
-      - 91.211.88.25
-    port: 2424
-    username: ndo
-    key: 
-      - from_secret: DEPLOY_PRIVATE_KEY
-    target: /var/www/html/landing-syzygy-prod/
-    source:
-      - "*.js"
-      - pm2.json
-      - node_modules
-      - assets
+    settings:
+      host:
+        - DEPLOY_HOST_IP
+      port: DEPLOY_HOST_PORT
+      username: ndo
+      key: 
+        - from_secret: DEPLOY_PRIVATE_KEY
+      target: /var/www/html/landing-syzygy-prod/
+      source:
+        - "*.js"
+        - pm2.json
+        - node_modules
+        - assets
 #    when:
 #      branch: master
 

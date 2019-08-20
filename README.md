@@ -1,10 +1,10 @@
 # Landing - Syzygy
 
+[![Build Status](https://drone.ndo.dev/api/badges/ndom91/syzygy-landing/status.svg)](https://drone.ndo.dev/ndom91/syzygy-landing)
+
 :pushpin: [**syzygy.ndo.dev**](https://syzygy.ndo.dev)  
 
-Default page for **ndomino** @ **Syzygy**
-
-![homepage screenshot](https://imgur.com/cCFE4VM.png)
+![homepage screenshot](https://imgur.com/OsiaRwL.png)
 
 ## Features
 
