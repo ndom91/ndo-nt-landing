@@ -1,6 +1,6 @@
 # Landing - Syzygy
 
-[![Build Status](https://drone.ndo.dev/api/badges/ndom91/syzygy-landing/status.svg)](https://drone.ndo.dev/ndom91/syzygy-landing)
+<img align="right" src="https://drone.ndo.dev/api/badges/ndom91/syzygy-landing/status.svg">
 
 :pushpin: [**syzygy.ndo.dev**](https://syzygy.ndo.dev)  
 
