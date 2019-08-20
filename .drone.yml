@@ -1,4 +1,4 @@
-kunde: pipeline
+kind: pipeline
 name: default
 
 steps:
