@@ -1,26 +1,26 @@
-pipeline:
+kunde: pipeline
+name: default
 
-  install:
-    image: node:8.6.0
-    commands:
-      - node -v
-      - npm i
+steps:
+- name: build
+  image: node:8.6.0
+  commands:
+    - node -v
+    - npm i
 
-  scp:
-    image: appleboy/drone-scp
-    settings:
-      host: 7.ndo.dev
-      port: 2424  
-      username: ndo
-      key: 
-        from_secret: DEPLOY_PRIVATE_KEY
-      target: /var/www/html/landing-syzygy-prod/
-      source:
-        - "*.js"
-        - pm2.json
-        - node_modules
-        - assets
-#    when:
-#      branch: master
-
-
+- name: deploy
+  image: appleboy/drone-scp
+  settings:
+    host: 
+      from_secret: DEPLOY_HOST_IP
+    port:   
+      from_secret: DEPLOY_HOST_PORT
+    username: ndo
+    key: 
+      from_secret: DEPLOY_PRIVATE_KEY
+    target: /var/www/html/landing-syzygy-prod/
+    source:
+      - "*.js"
+      - pm2.json
+      - node_modules
+      - assets
