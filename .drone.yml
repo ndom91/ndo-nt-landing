@@ -9,13 +9,10 @@ pipeline:
   scp:
     image: appleboy/drone-scp
     settings:
-      host:
-        - from_secret: DEPLOY_HOST_IP
-      port: 
-        - from_secret: DEPLOY_HOST_PORT
+      host: $DEPLOY_HOST_IP
+      port: $DEPLOY_HOST_PORT
       username: ndo
-      key: 
-        - from_secret: DEPLOY_PRIVATE_KEY
+      key: $DEPLOY_PRIVATE_KEY
       target: /var/www/html/landing-syzygy-prod/
       source:
         - "*.js"
