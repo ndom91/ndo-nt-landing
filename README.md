@@ -1,8 +1,7 @@
 # Landing - Syzygy
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ndom91/syzygy-landing.svg?token=ac1a3669b7e5935a460f6dad9c9ed8f7ce0c76127d5502447f71a4c38789d3ea&ts=1566405890216)](https://greenkeeper.io/)
-
 <img align="right" src="https://drone.ndo.dev/api/badges/ndom91/syzygy-landing/status.svg">
+<img align="right" src="https://badges.greenkeeper.io/ndom91/syzygy-landing.svg?token=ac1a3669b7e5935a460f6dad9c9ed8f7ce0c76127d5502447f71a4c38789d3ea&ts=1566405890216">
 
 :pushpin: [**syzygy.ndo.dev**](https://syzygy.ndo.dev)  
 
