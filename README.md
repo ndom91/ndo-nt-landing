@@ -52,4 +52,4 @@ Search Providers Hashbangs include:
 
 ---  
 
-<sub>License [AGLPv3](https://www.gnu.org/licenses/agpl-3.0.en.html)</sup>
+<sub>License [MIT](https://opensource.org/licenses/MIT)</sup>
