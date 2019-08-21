@@ -17,13 +17,15 @@
 
 Search Providers Hashbangs include:
 
-- **!g** - google
-- **!im** - google images
-- **!imdb** - imdb
-- **!wp** - wikipedia
-- **!yt** - youtube
-- **!c** - syzygy confluence
-- **!j** - syzygy jira
+- `!g` - **google**
+- `!im` - **google images**
+- `!imdb` - **imdb**
+- `!wp` - **wikipedia**
+- `!yt` - **youtube**
+- `!c` - **syzygy confluence**
+- `!j` - **syzygy jira**
+- `!dh` - **devhints.io**
+- `!so` - **stack overflow**
 
 ## Requirements  
 
