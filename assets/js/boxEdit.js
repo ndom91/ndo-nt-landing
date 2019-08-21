@@ -72,7 +72,7 @@ $(".listing-apps > li").click(function(e) {
             title: 'Change Box',
             width: '250px',
             focusInput: true,
-            headerColor: '#67B246',
+            headerColor: '#0b0f56',
             transitionOut: 'bounceOutDown'
         });
 

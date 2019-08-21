@@ -28,44 +28,43 @@ app.post('/jira', (req, res) => {
     })
 
     getIssueDetails = (key) => {
-        let issueDetail = jira.findIssue(key)
-        return issueDetail
+        let issueDetails = jira.findIssue(key)
+        return issueDetails
     }
 
     jira.getUsersIssues(process.env.JIRA_USER)
     .then(issue => {
         const issueObj = issue.issues
-        let outputObj = {}
-        let outputObj2 = {}
+        let rawOutput = {}
+        let filteredOutput = {}
         let issueArr = []
 
         issueObj.forEach(issue => {
             issueArr.push(issue.key)
         })
 
-        let omgzPromises = issueArr.map(getIssueDetails)
-        let omgzResults = Promise.all(omgzPromises)
+        let issuePromise = issueArr.map(getIssueDetails)
+        let resolvedIssuePromise = Promise.all(issuePromise)
 
-        omgzResults.then(data => {
+        resolvedIssuePromise.then(data => {
             for (const key of Object.keys(data)) {
                 const status = data[key].fields.status.id
                 const name = data[key].fields.status.name
                 const description = data[key].fields.issuetype.description
-                console.log(status, name, description)
                 if(status !== '6' && status !== '10001'){
                     const issueKey = data[key].key
                     const issueSummary = data[key].fields.summary
-                    outputObj[issueKey] = issueSummary
+                    rawOutput[issueKey] = issueSummary
                 }
             }
-            outputObj2['issues'] = outputObj
+            filteredOutput['issues'] = rawOutput
 
-            const outputJSON = JSON.stringify(outputObj2)
+            const outputJSON = JSON.stringify(filteredOutput)
             return res.status(202).send(outputJSON)
         })
     })
     .catch(err => {
-        console.error(err)
+        console.error('Error: ', err)
         return res.status(403).send(err)
     })
 
