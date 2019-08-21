@@ -151,7 +151,7 @@ img {
   font-style: normal;
 }
 .fnameWelcome:hover {
-  text-shadow: 0 0 10px #66EE66;
+  text-shadow: 0 0 10px #0b506f;
 }
 
 /* ==========================================================================
@@ -205,14 +205,14 @@ h3.subTitle {
 }
 .btnSubmit {
   color: rgb(255, 255, 255);
-  background-color: #66ee66;
-  border-top-color: #66ee66;
-  border-right-color: #66ee66;
-  border-bottom-color: #66ee66;
-  border-left-color: #66ee66; 
+  background-color: #0b506f;
+  border-top-color: #0b506f;
+  border-right-color: #0b506f;
+  border-bottom-color: #0b506f;
+  border-left-color: #0b506f; 
 }
 .btnSubmit:hover {
-  box-shadow: 0 0 5px #66ee66;
+  box-shadow: 0 0 5px #0b506f;
 }
 /* .btnSubmit:active:focus {
   box-shadow: rgba(69, 202, 98, 0.685) 0px 0px 0px 0.2rem;
@@ -366,7 +366,7 @@ h3.subTitle {
 }
 .edit:hover {
   opacity: 1.0;
-  text-shadow: 0 0 10px #66EE66;
+  text-shadow: 0 0 10px #0b506f;
 }
 .name {
   z-index: 999;
@@ -573,12 +573,12 @@ button {
      padding: 0.3em;
 }
 .ui-dialog-titlebar {
-  background: #66EE66;
+  background: #0b506f;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 .ui-dialog-buttonset {
-  background: #66EE66;
+  background: #0b506f;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -646,7 +646,7 @@ button {
   font-family: 'ynh_ssowat';
   font-size: 4em;
   text-align: center;
-  box-shadow: 0 0 10px 1px #66ee66;
+  box-shadow: 0 0 10px 1px #66EE66;
   width: 1em;
   height: 1em;
   border-radius: 10px;
@@ -665,7 +665,7 @@ button {
 }
 
 .user-container .user-username:hover {
-  text-shadow: 0 0 15px #66EE66;
+  text-shadow: 0 0 15px #0b506f;
 }
 
 .user-container .user-fullname {
@@ -730,7 +730,7 @@ button {
   }
 
   i.fa-angellist:hover {
-    text-shadow: 0 0 25px #66EE66;
+    text-shadow: 0 0 25px #0b506f;
   }
 
   /* ==========================================================================
@@ -758,7 +758,7 @@ button {
     display: inline-block;
     font-size: 1.2rem;
     vertical-align: top;
-    color: #66ee66;
+    color: #0b506f;
     border-bottom: 1px dotted #666;
   }
   .footer a:before {
@@ -775,7 +775,7 @@ button {
     text-decoration: none;
   }
   .love {
-    color: #66EE66;
+    color: #0b506f;
   }
   .footerawrapper {
     float: right;
@@ -826,7 +826,7 @@ button {
 
   #jiraTicker > li > a:hover {
     font-weight: 500;
-    color: #66EE66;
+    color: #0b506f;
   }
 @media screen and (max-width: 480px) {
   .footer a {
@@ -952,7 +952,7 @@ button {
 .green1:focus:after,
 .green1:hover:before,
 .green1:focus:before {
-    background: #66ee66!important;
+    background: #0b506f!important;
 }
 
 .green2 {
@@ -963,7 +963,7 @@ button {
 .green2:focus:after,
 .green2:hover:before,
 .green2:focus:before {
-    background: #66ee66!important;
+    background: rgb(82, 168, 82)!important;
 }
 
 .green3 {
@@ -974,7 +974,7 @@ button {
 .green3:focus:after,
 .green3:hover:before,
 .green3:focus:before {
-    background: #66ee66!important;
+    background: #0b506f!important;
 }
 
 .green4 {
@@ -985,7 +985,7 @@ button {
 .green4:focus:after,
 .green4:hover:before,
 .green4:focus:before {
-    background: #66ee66!important;
+    background: #0b506f!important;
 }
 
 /* Following colors are not used yet */
@@ -1094,7 +1094,7 @@ button {
   display: inline-block;
   padding: 0 1rem;
   font-size: 1rem;
-  color: #66ee66;
+  color: #0b506f;
   font-weight: 600;
 }
 
@@ -1130,7 +1130,7 @@ label:after {
 	left: -1px;
 	width: 20px;
 	height: 20px;
-	background: #66ee66;
+	background: #0b506f;
 	border-radius: 9px;
 	transition: 0.3s;
 }

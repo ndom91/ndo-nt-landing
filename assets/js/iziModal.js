@@ -1411,7 +1411,7 @@
 		    appendToOverlay: 'body', // or false
 		    overlay: true,
 		    overlayClose: true,
-		    overlayColor: 'rgba(0, 0, 0, 0.4)',
+		    overlayColor: 'rgba(0, 0, 0, 0.6)',
 		    timeout: false,
 		    timeoutProgressbar: false,
 		    pauseOnHover: false,

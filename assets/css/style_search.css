@@ -43,6 +43,10 @@
   font-family: 'Rajdhani';
 }
 
+.container-search {
+  /* filter: blur(2px); */
+}
+
 .container-search input::placeholder {
   font-family: 'Rajdhani';
 }
