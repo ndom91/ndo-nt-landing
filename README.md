@@ -4,7 +4,7 @@
 
 :pushpin: [**syzygy.ndo.dev**](https://syzygy.ndo.dev)  
 
-![homepage screenshot](https://imgur.com/OsiaRwL.png)
+![homepage screenshot](https://imgur.com/dVdi4C0.png)
 
 ## Features
 
