@@ -7,6 +7,8 @@ steps:
   secrets:
     - ENV 
   commands:
+    - pwd
+    - ls -lah
     - node -v
     - npm i
     - cat $ENV > .env
@@ -24,4 +26,4 @@ steps:
     rm: true
     target: /var/www/html/ndo-nt-landing
     source:
-      - release/*
+      - /drone/src/*
