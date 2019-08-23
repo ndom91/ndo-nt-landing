@@ -4,9 +4,12 @@ name: default
 steps:
 - name: build
   image: node:latest
+  secrets:
+    - ENV 
   commands:
     - node -v
     - npm i
+    - cat ENV > .env
 
 - name: deploy
   image: appleboy/drone-scp
@@ -20,8 +23,4 @@ steps:
       from_secret: DEPLOY_PRIVATE_KEY
     target: /var/www/html/ndo-nt-landing
     source:
-      - "*.js"
-      - index.html
-      - pm2.json
-      - node_modules
-      - assets
+      - "*"
