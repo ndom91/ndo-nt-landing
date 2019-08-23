@@ -7,11 +7,9 @@ steps:
   secrets:
     - ENV 
   commands:
-    - pwd
-    - ls -lah
     - node -v
     - npm i
-    - cat ${ENV} > .env
+    - cat $${ENV} > .env
 
 - name: deploy
   image: appleboy/drone-scp
