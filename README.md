@@ -7,7 +7,7 @@
 
 ![homepage screenshot](https://imgur.com/dVdi4C0.png)
 
-## Features
+## 🎁 Features
 
 - [x] Grid based favorites launcher  
 - [x] Editable URL block  
@@ -27,11 +27,11 @@ Search Providers Hashbangs include:
 - `!dh` - **devhints.io**
 - `!so` - **stack overflow**
 
-## Requirements  
+## 🔨 Requirements  
 
-- Jira Account for open ticket ticker  
+- [x] Jira Account for open ticket ticker  
 
-## Installation
+## 🏗️ Installation
 
 1. Clone this Repo `git clone https://git.newtelco.dev/ndomino/landing-syzygy` 
 2. Install the dependencies `npm install` 
@@ -45,7 +45,7 @@ Search Providers Hashbangs include:
 7a. Run: `if [ ! -f /usr/local/bin/pm2 ] ; then npm i -g pm2 ; fi && pm2 start server.js --name "Syzygy Landing"`  
 7b. Use [**nginx**](https://nginx.org/en/docs/) to reverse proxy out `localhost:7557`  
 
-## Contributing
+## 🙏 Contributing
 
 1. Clone this Repo `git clone https://git.newtelco.dev/ndomino/landing-syzygy`  
 2. Install Dependencies `npm install`  
@@ -53,5 +53,4 @@ Search Providers Hashbangs include:
 4. Run dev server `npm run start:dev` available @ [localhost:7557](http://localhost:7557)  
 
 ---  
-
-<sub>License [MIT](https://opensource.org/licenses/MIT)</sup>
+📝 License [`MIT`](https://opensource.org/licenses/MIT)
