@@ -1,0 +1,10 @@
+{
+  "apps" : [{
+    "name"        : "ndo-nt-landing",
+    "script"      : "/var/www/html/ndo-nt-landing/server.js",
+    "autorestart" : true,
+    "watch"       : true,
+    "ignore_watch": ["node_modules"]
+  }]
+}
+
