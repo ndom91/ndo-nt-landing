@@ -640,8 +640,8 @@ button {
   z-index: 1;
   float: left;
   margin-right: 10px;
-  content:url('/assets/img/favicon_small_white.png');
-  background: url('/assets/img/favicon_small_white.png') CENTER CENTER NO-REPEAT;
+  content:url('/assets/img/nt_square_white.png');
+  background: url('/assets/img/nt_square_white.png') CENTER CENTER NO-REPEAT;
   display: block;
   font-family: 'ynh_ssowat';
   font-size: 4em;
