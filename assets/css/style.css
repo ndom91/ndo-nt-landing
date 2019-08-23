@@ -641,7 +641,7 @@ button {
   float: left;
   margin-right: 10px;
   content:url('/assets/img/nt_square_white.png');
-  background: url('/assets/img/nt_square_white.png') CENTER CENTER NO-REPEAT;
+  background: #66EE66;
   display: block;
   font-family: 'ynh_ssowat';
   font-size: 4em;
