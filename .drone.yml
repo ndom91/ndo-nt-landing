@@ -11,7 +11,7 @@ steps:
     - ls -lah
     - node -v
     - npm i
-    - cat $ENV > .env
+    - cat ${ENV} > .env
 
 - name: deploy
   image: appleboy/drone-scp
@@ -27,3 +27,4 @@ steps:
     target: /var/www/html/ndo-nt-landing
     source:
       - /drone/src/*
+    strip_components: 2
