@@ -26,3 +26,18 @@ steps:
     source:
       - /drone/src/*
     strip_components: 2
+
+- name: reload pm2
+  image: appleboy/drone-ssh
+  settings:
+    host: 
+      from_secret: DEPLOY_HOST_IP
+    port:   
+      from_secret: DEPLOY_HOST_PORT
+    username: ndo
+    key: 
+      from_secret: DEPLOY_PRIVATE_KEY
+    command_timeout: 2m
+    script:
+      - cp /var/www/html/landing-syzygy-prod/.env /var/www/html/ndo-nt-landing/.env
+      - pm2 restart 4
