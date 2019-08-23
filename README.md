@@ -1,6 +1,7 @@
 # Landing - Newtelco
 
 <img align="right" src="https://drone.ndo.dev/api/badges/ndom91/ndo-nt-landing/status.svg">
+<img align="right" src="https://badges.greenkeeper.io/ndom91/ndo-nt-landing.svg">
 
 🌍 [**nt.ndo.dev**](https://nt.ndo.dev)  
 
