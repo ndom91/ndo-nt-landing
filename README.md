@@ -3,7 +3,7 @@
 <img align="right" src="https://drone.ndo.dev/api/badges/ndom91/syzygy-landing/status.svg">
 <img align="right" src="https://badges.greenkeeper.io/ndom91/syzygy-landing.svg?token=ac1a3669b7e5935a460f6dad9c9ed8f7ce0c76127d5502447f71a4c38789d3ea&ts=1566405890216">
 
-:pushpin: [**nt.ndo.dev**](https://nt.ndo.dev)  
+🌍 [**nt.ndo.dev**](https://nt.ndo.dev)  
 
 ![homepage screenshot](https://imgur.com/dVdi4C0.png)
 
@@ -29,11 +29,11 @@ Search Providers Hashbangs include:
 
 ## 🔨 Requirements  
 
-- [x] Jira Account for open ticket ticker  
+- [x] Trello account for open card ticker  
 
 ## 🏗️ Installation
 
-1. Clone this Repo `git clone https://git.newtelco.dev/ndomino/landing-syzygy` 
+1. Clone this Repo `git clone https://github.com/ndom91/private-landing-newtelco` 
 2. Install the dependencies `npm install` 
 3. Make a copy of `.env.template` like so `cp .env.template .env`
 4. Add your Jira details, etc. to your new `.env`
@@ -47,7 +47,7 @@ Search Providers Hashbangs include:
 
 ## 🙏 Contributing
 
-1. Clone this Repo `git clone https://git.newtelco.dev/ndomino/landing-syzygy`  
+1. Clone this Repo `git clone https://github.com/ndom91/private-landing-newtelco`  
 2. Install Dependencies `npm install`  
 3. Create a branch `git checkout -b [BRANCH_NAME]`  
 4. Run dev server `npm run start:dev` available @ [localhost:7557](http://localhost:7557)  
