@@ -115,15 +115,11 @@ $(".listing-apps > li").click(function(e) {
         e.preventDefault();
         var originalLabel = $("span#" + targethref).defaultValue;
         var originalURL = $("a#" + targethref).defaultValue;
-        // console.log('originalLabel: ' + originalLabel);
-        // console.log(originalLabel);
-        // console.log('originalURL: ' + originalURL);
-        // console.log(originalURL);
         eraseCookie(targethref);
         $("span#" + targethref).text(originalLabel);
         $("a#" + targethref).attr('href', originalURL);
         $('#modal').iziModal('close', {});
-        window.location.href = "https://syzygy.ndo.dev";
+        window.location.href = "https://nt.ndo.dev";
     });
 
 });

@@ -781,7 +781,7 @@ button {
     float: right;
   }
 
-  .link-syzygy:hover, .footera:hover {
+  .link-newtelco:hover, .footera:hover {
     background-position: 0 0;
     color:#333;
   }
@@ -843,7 +843,7 @@ button {
   }
 }
 @media screen and (max-width: 370px) {
-  .link-syzygy {
+  .link-newtelco {
     display:none !important;
   }
 }

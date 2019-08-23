@@ -23,7 +23,7 @@ fetch('/jira', {
 
     // append li for each issue
     Object.keys(issues).forEach(issue => {
-        $('#jiraTicker').append(`<li><a href="https://task.syzygy.de/browse/${issue}">${issue}</a> - ${issues[issue]}</li>`)
+        $('#jiraTicker').append(`<li><a href="https://trello.com/newtelcotechnik/${issue}">${issue}</a> - ${issues[issue]}</li>`)
     })
 
     // initialize Ticker

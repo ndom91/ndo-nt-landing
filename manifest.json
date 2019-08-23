@@ -1,10 +1,10 @@
 {
     "dir": "ltr",
     "lang": "af",
-    "name": "Syzygy Home",
+    "name": "Newtelco NDO Home",
     "display": "standalone",
-    "start_url": "https://syzygy.ndo.dev",
-    "short_name": "Syzygy Home",
+    "start_url": "https://nt.ndo.dev",
+    "short_name": "Newtelco Home",
     "theme_color": "#66ee66",
     "description": "",
     "orientation": "portrait",
