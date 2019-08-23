@@ -24,4 +24,4 @@ steps:
     rm: true
     target: /var/www/html/ndo-nt-landing
     source:
-      - "*"
+      - "/drone/src/*"
