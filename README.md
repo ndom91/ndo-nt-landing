@@ -5,7 +5,7 @@
 
 🌍 [**nt.ndo.dev**](https://nt.ndo.dev)  
 
-![homepage screenshot](https://imgur.com/dVdi4C0.png)
+![homepage screenshot](https://imgur.com/SVt2p0k.png)
 
 ## 🎁 Features
 
