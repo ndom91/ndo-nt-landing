@@ -38,21 +38,3 @@ fetch('/jira', {
 .catch(error => console.error(error))
 
 });
-
-// Dark Mode Toggle
-$("input[type='checkbox']").change(function() {
-  const body = document.querySelector('#body1')
-  const texts = document.querySelectorAll('.title')
-  if ($(this).is(':checked')) {
-    // Dark Mode ON
-    body.classList.remove('lightBody')
-    body.classList.add('darkBody')
-    texts.forEach((text) => {text.style.color = "#424242"})
-  }
-  else {
-    // Dark Mode OFF
-    body.classList.remove('darkBody')
-    body.classList.add('lightBody')
-    texts.forEach((text) => {text.style.color = "#fff"})
-  }
-})
