@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: build
-  image: node:8.6.0
+  image: node:latest
   commands:
     - node -v
     - npm i
@@ -18,9 +18,10 @@ steps:
     username: ndo
     key: 
       from_secret: DEPLOY_PRIVATE_KEY
-    target: /var/www/html/landing-syzygy-prod/
+    target: /var/www/html/ndo-nt-landing
     source:
       - "*.js"
+      - index.html
       - pm2.json
       - node_modules
       - assets
