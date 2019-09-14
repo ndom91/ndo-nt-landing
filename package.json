@@ -18,7 +18,7 @@
     "jira-client": "^6.7.1"
   },
   "devDependencies": {
-    "eslint": "^6.2.1",
+    "eslint": "^6.4.0",
     "nodemon": "^1.19.1"
   }
 }
